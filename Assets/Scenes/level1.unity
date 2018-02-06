@@ -1393,8 +1393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 186460894}
-  - {fileID: 1483375485}
   - {fileID: 369965307}
+  - {fileID: 477867488}
   possiblePaths: []
 --- !u!114 &48007878
 MonoBehaviour:
@@ -1886,8 +1886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1939110592}
   - {fileID: 1378405706}
+  - {fileID: 1939110592}
   possiblePaths: []
 --- !u!114 &61098180
 MonoBehaviour:
@@ -2697,8 +2697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 595564412}
   - {fileID: 404224864}
+  - {fileID: 595564412}
   possiblePaths: []
 --- !u!114 &93000113
 MonoBehaviour:
@@ -5924,7 +5924,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -6636,7 +6636,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -7781,7 +7781,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -9260,7 +9260,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -11103,8 +11103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 801633942}
-  - {fileID: 1891706543}
   - {fileID: 93000112}
+  - {fileID: 1891706543}
   possiblePaths: []
 --- !u!114 &404224865
 MonoBehaviour:
@@ -12942,10 +12942,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1615028691}
-  - {fileID: 1287537524}
-  - {fileID: 814886677}
   - {fileID: 1661427592}
+  - {fileID: 1615028691}
+  - {fileID: 814886677}
+  - {fileID: 1287537524}
   possiblePaths: []
 --- !u!114 &444636808
 MonoBehaviour:
@@ -13130,7 +13130,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -13616,9 +13616,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1287537524}
-  - {fileID: 111198613}
   - {fileID: 1465599239}
+  - {fileID: 111198613}
+  - {fileID: 1287537524}
   possiblePaths: []
 --- !u!114 &470663697
 MonoBehaviour:
@@ -15581,7 +15581,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -16101,9 +16101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 1999995422}
-  - {fileID: 1594577049}
-  - {fileID: 1250897595}
   - {fileID: 1405065967}
+  - {fileID: 1250897595}
+  - {fileID: 1594577049}
   possiblePaths: []
 --- !u!114 &568755049
 MonoBehaviour:
@@ -21228,8 +21228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 372469727}
-  - {fileID: 369965307}
   - {fileID: 1352638816}
+  - {fileID: 369965307}
   possiblePaths: []
 --- !u!4 &799320467 stripped
 Transform:
@@ -21264,8 +21264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 1939110592}
-  - {fileID: 404224864}
   - {fileID: 1519419940}
+  - {fileID: 404224864}
   possiblePaths: []
 --- !u!114 &801633943
 MonoBehaviour:
@@ -22064,8 +22064,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1155615501}
   - {fileID: 1865718101}
+  - {fileID: 1155615501}
   possiblePaths: []
 --- !u!114 &826023316
 MonoBehaviour:
@@ -22725,7 +22725,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4863721855360260, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 26
+      value: 31.78
       objectReference: {fileID: 0}
     - target: {fileID: 4863721855360260, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
       propertyPath: m_LocalPosition.y
@@ -22755,7 +22755,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114378102620784548, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &858217173
@@ -24407,8 +24408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 177717657}
-  - {fileID: 372469727}
   - {fileID: 1529685406}
+  - {fileID: 372469727}
   possiblePaths: []
 --- !u!1001 &950995778
 Prefab:
@@ -25047,7 +25048,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -25102,7 +25103,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -27682,8 +27683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1576734508}
   - {fileID: 421163025}
+  - {fileID: 1576734508}
   possiblePaths: []
 --- !u!114 &1085326236
 MonoBehaviour:
@@ -30632,7 +30633,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -32577,6 +32578,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1272344362 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1965776062818924, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
+    type: 2}
+  m_PrefabInternal: {fileID: 855411574}
+--- !u!114 &1272344363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1272344362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ebc57bd1acaf341a57b3f1bd0855d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  currentState: 1
+  prevState: 0
+  ScatterModeTimer1: 7
+  ScatterModeTimer2: 5
+  ChaseModeTimer: 20
+  pacMan: {fileID: 0}
+  currentNode: {fileID: 0}
+  nextNode: {fileID: 0}
+  previousNode: {fileID: 0}
+  direction: {x: 0, y: 0}
+  nextDirection: {x: 0, y: 0}
 --- !u!1 &1274548269
 GameObject:
   m_ObjectHideFlags: 0
@@ -32910,9 +32939,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 1603496148}
-  - {fileID: 444636807}
   - {fileID: 806808376}
   - {fileID: 470663696}
+  - {fileID: 444636807}
   possiblePaths: []
 --- !u!114 &1287537525
 MonoBehaviour:
@@ -32976,7 +33005,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -34364,10 +34393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1405065967}
-  - {fileID: 186460894}
   - {fileID: 1486432738}
+  - {fileID: 1405065967}
   - {fileID: 799320465}
+  - {fileID: 186460894}
   possiblePaths: []
 --- !u!114 &1352638817
 MonoBehaviour:
@@ -35036,8 +35065,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 61098179}
-  - {fileID: 427993746}
   - {fileID: 1155615501}
+  - {fileID: 427993746}
   possiblePaths: []
 --- !u!114 &1378405707
 MonoBehaviour:
@@ -36122,8 +36151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 1250897595}
+  - {fileID: 1604231312}
   - {fileID: 377653353}
-  - {fileID: 421163025}
   possiblePaths: []
 --- !u!114 &1417176444
 MonoBehaviour:
@@ -38976,9 +39005,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 950272732}
   - {fileID: 613944557}
   - {fileID: 1171095177}
+  - {fileID: 950272732}
   possiblePaths: []
 --- !u!1001 &1529716080
 Prefab:
@@ -41663,8 +41692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 1665239692}
   - {fileID: 1423844499}
+  - {fileID: 1665239692}
   possiblePaths: []
 --- !u!114 &1650565545
 MonoBehaviour:
@@ -45847,7 +45876,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
@@ -46030,9 +46059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 427993746}
-  - {fileID: 2052762818}
   - {fileID: 186460894}
+  - {fileID: 2052762818}
+  - {fileID: 427993746}
   possiblePaths: []
 --- !u!114 &1811076636
 MonoBehaviour:
@@ -48028,8 +48057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours:
-  - {fileID: 186460894}
   - {fileID: 826023315}
+  - {fileID: 186460894}
   possiblePaths: []
 --- !u!114 &1865718102
 MonoBehaviour:
@@ -52645,8 +52674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 1811076635}
-  - {fileID: 363164415}
   - {fileID: 1205707229}
+  - {fileID: 363164415}
   possiblePaths: []
 --- !u!114 &2052762819
 MonoBehaviour:
@@ -52928,7 +52957,7 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString

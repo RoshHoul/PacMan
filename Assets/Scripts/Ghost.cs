@@ -20,13 +20,13 @@ public class Ghost : MonoBehaviour {
     private float modeChangeTimer = 0f;
 
     private GameBoard GM;
-    private GameObject pacMan;
+    public GameObject pacMan;
 
-    private Node currentNode, nextNode,previousNode;
-    private Vector2 direction, nextDirection;
+    public Node currentNode, nextNode,previousNode;
+    public Vector2 direction, nextDirection;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
         pacMan = GameObject.Find("Pac Man");
         GM = GameObject.Find("_GM").GetComponent<GameBoard>();
         Node node = GetNodeAtPosition(transform.localPosition);
@@ -37,8 +37,6 @@ public class Ghost : MonoBehaviour {
 
         direction = Vector2.left;
 
-        Vector2 targetTile = new Vector2 (Mathf.RoundToInt(pacMan.transform.position.x), Mathf.RoundToInt(pacMan.transform.position.y));
-        nextNode = GetNodeAtPosition(targetTile);
 	}
 	
 	// Update is called once per frame
@@ -96,36 +94,37 @@ public class Ghost : MonoBehaviour {
 
     void Move()
     {
-        //if (nextNode != currentNode && nextNode != null)
-        //{
-        //    Debug.Log("Ghost in 1st if");
-        //    if (OverShotTarget())
-        //    {
-        //        Debug.Log("Ghost in OST");
-        //        currentNode = nextNode;
-        //        transform.localPosition = currentNode.transform.position;
+        if (nextNode != currentNode && nextNode != null)
+        {
+            Debug.Log("Ghost in 1st if");
+            if (OverShotTarget())
+            {
+                Debug.Log("Ghost in OST");
+                currentNode = nextNode;
+                transform.localPosition = currentNode.transform.position;
 
-        //        GameObject portal = GetPortal(currentNode.transform.position);
+                GameObject portal = GetPortal(currentNode.transform.position);
 
-        //        if (portal != null)
-        //        {
-        //            transform.localPosition = portal.transform.position;
-        //            currentNode = portal.GetComponent<Node>();
-        //        }
+                if (portal != null)
+                {
+                    transform.localPosition = portal.transform.position;
+                    currentNode = portal.GetComponent<Node>();
+                }
 
-        //        nextNode = CanMove();
+                nextNode = CanMove();
 
-        //        previousNode = currentNode;
-        //        currentNode = null;
-                 
-        //    } else
-        //    {
-        //        transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
-        //    }
-        //}
+                previousNode = currentNode;
+                currentNode = null;
+
+            }
+            else
+            {
+                transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
+            }
+        }
     }
 
-    GameObject GetPortal(Vector2 pos)
+    public GameObject GetPortal(Vector2 pos)
     {
         GameObject tile = GM.board[(int)pos.x, (int)pos.y];
 
@@ -141,7 +140,7 @@ public class Ghost : MonoBehaviour {
         return null;
     }
 
-    Node GetNodeAtPosition(Vector2 pos)
+    public Node GetNodeAtPosition(Vector2 pos)
     {
         GameObject tile = GM.board[(int)pos.x, (int)pos.y];
 
@@ -152,7 +151,7 @@ public class Ghost : MonoBehaviour {
         return null;
     }
 
-    Node CanMove()
+    public Node CanMove()
     {
         Node moveTo = null;
         Vector2 pacManPos = pacMan.transform.position;
@@ -199,7 +198,7 @@ public class Ghost : MonoBehaviour {
         return moveTo;
     }
 
-    bool OverShotTarget()
+    public bool OverShotTarget()
     {
         float nodeToTarget = DistanceFromNode(nextNode.transform.position);
         float nodeToSelf = DistanceFromNode(transform.localPosition);

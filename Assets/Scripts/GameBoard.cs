@@ -25,10 +25,13 @@ public class GameBoard : MonoBehaviour {
 
             if (o.tag == "Pellets")
             {
+                Debug.Log("pellets");
                 if (tile != null)
                 {
+                    Debug.Log("tile");
                     if (tile.isPellet || tile.isSuperPellet) 
                     {
+                        Debug.Log("peller or energ");
                         pelletsCount++;
                     }
                 }
