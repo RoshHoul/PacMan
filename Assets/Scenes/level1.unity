@@ -1394,7 +1394,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 186460894}
   - {fileID: 369965307}
-  - {fileID: 477867488}
+  - {fileID: 1483375485}
   possiblePaths: []
 --- !u!114 &48007878
 MonoBehaviour:
@@ -22725,7 +22725,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4863721855360260, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31.78
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4863721855360260, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
       propertyPath: m_LocalPosition.y
@@ -27200,11 +27200,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4118269808111668, guid: be60d51329ae96f408238689b309bb26, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4118269808111668, guid: be60d51329ae96f408238689b309bb26, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4118269808111668, guid: be60d51329ae96f408238689b309bb26, type: 2}
       propertyPath: m_LocalPosition.z
@@ -32591,21 +32591,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1272344362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6ebc57bd1acaf341a57b3f1bd0855d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 86888d90ad80a8f43bad5194c9b3adc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   currentState: 1
   prevState: 0
   ScatterModeTimer1: 7
   ScatterModeTimer2: 5
   ChaseModeTimer: 20
   pacMan: {fileID: 0}
-  currentNode: {fileID: 0}
-  nextNode: {fileID: 0}
-  previousNode: {fileID: 0}
-  direction: {x: 0, y: 0}
-  nextDirection: {x: 0, y: 0}
+  speed: 5
 --- !u!1 &1274548269
 GameObject:
   m_ObjectHideFlags: 0

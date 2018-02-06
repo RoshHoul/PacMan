@@ -46,7 +46,7 @@ public class GameBoard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("SCORE: " + pacMan.pCollected);
+      //  Debug.Log("SCORE: " + pacMan.pCollected);
 
 		if (IsGameOver())
         {

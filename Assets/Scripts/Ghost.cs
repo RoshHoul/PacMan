@@ -37,7 +37,10 @@ public class Ghost : MonoBehaviour {
 
         direction = Vector2.left;
 
-	}
+        Vector2 pacManPos = pacMan.transform.position;
+        Vector2 targetTile = new Vector2(Mathf.RoundToInt(pacManPos.x), Mathf.RoundToInt(pacManPos.y));
+        nextNode = GetNodeAtPosition(targetTile);
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -32,7 +32,7 @@ public class Controller : MonoBehaviour {
             Debug.Log(currentNode);
         }
 
-        direction = Vector2.left;
+        direction = Vector2.zero;
         ChangePosition(direction);
     }
 
@@ -72,12 +72,10 @@ public class Controller : MonoBehaviour {
 
         if (currentNode != null)
         {
-            Debug.Log("curr isnt null");
             Node moveToNode = CanMove(dir);
 
             if (moveToNode != null)
             {
-                Debug.Log("can moveToNode");
                 direction = dir;
                 targetNode = moveToNode;
                 previousNode = currentNode;
@@ -229,10 +227,8 @@ public class Controller : MonoBehaviour {
 
         for (int i = 0; i < currentNode.neighbours.Length; i++)
         {
-            Debug.Log("cpp + " + currentNode.possiblePaths[i]);
             if (currentNode.possiblePaths[i] == dir)
             {
-                Debug.Log("possiblepath");
                 moveTo = currentNode.neighbours[i];
                 break;
             }
