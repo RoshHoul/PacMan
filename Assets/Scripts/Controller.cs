@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour {
     public float speed = 4.0f;
 
     public Sprite idleSprite;
+    public Vector2 orientation;
 
     [HideInInspector]
     public int pCollected = 0;
@@ -15,6 +16,7 @@ public class Controller : MonoBehaviour {
     private Sprite currentSprite;
 
     private Vector2 direction = Vector2.zero;
+    
     private Vector2 nextDirection;
     private Node currentNode, previousNode, targetNode;
     private GameBoard GM;
@@ -32,7 +34,8 @@ public class Controller : MonoBehaviour {
             Debug.Log(currentNode);
         }
 
-        direction = Vector2.zero;
+        direction = Vector2.left;
+        orientation = Vector2.left;
         ChangePosition(direction);
     }
 
@@ -162,25 +165,27 @@ public class Controller : MonoBehaviour {
 
         if (direction == Vector2.left)
         {
-           
+            orientation = Vector2.left;
             temp.x = -1;
             transform.localScale = temp;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         } else if (direction == Vector2.right)
         {
+            orientation = Vector2.right;
             temp.x = 1;
             transform.localScale = temp;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         } else if ( direction == Vector2.up) 
         {
-
+            orientation = Vector2.up;
             temp.x = 1;
             transform.localScale = temp;
             transform.localRotation = Quaternion.Euler(0, 0, 90);
 
         } else if (direction == Vector2.down)
         {
+            orientation = Vector2.down;
             temp.x = 1;
             transform.localScale = temp;
             transform.localRotation = Quaternion.Euler(0, 0, 270);

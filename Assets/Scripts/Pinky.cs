@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blinky : BaseGhost {
+public class Pinky : BaseGhost {
 
     public Node startingNode;
     public int speed = 5;
@@ -11,10 +11,13 @@ public class Blinky : BaseGhost {
     private Vector2 nextDirection;
     private Vector2 targetTile;
     public Node myCornerNode;
-    public bool inStartingPosition;
+    public bool inGhostHouse;
+    private float ghostReleaseTimer = 0.0f;
+    public float myReleaseTimer = 5.0f;
 
-	// Use this for initialization
-	protected override void Start () {
+    // Use this for initialization
+    protected override void Start()
+    {
         base.Start();
 
         Node node = GetNodeAtPosition(transform.localPosition);
@@ -27,29 +30,31 @@ public class Blinky : BaseGhost {
             currentNode = startingNode;
         }
 
-        if (inStartingPosition)
-        {
-            direction = Vector2.left;
-            nextNode = CanMove();
-        }
+        direction = Vector2.left;
+        nextNode = CanMove();
 
         prevNode = currentNode;
 
     }
-	
-	// Update is called once per frame
-	protected override void Update () {
+
+    // Update is called once per frame
+    protected override void Update()
+    {
         base.Update();
         Debug.Log("currentState " + GetState());
         Move();
-       
-	}
+        if (inGhostHouse)
+        {
+            ReleaseGhost();
+        }
+
+    }
 
 
 
     void Move()
     {
-        if (nextNode != currentNode && nextNode != null)
+        if (nextNode != currentNode && nextNode != null && !inGhostHouse)
         {
             if (OverShotTarget(nextNode, prevNode))
             {
@@ -65,7 +70,7 @@ public class Blinky : BaseGhost {
                 }
 
                 nextNode = CanMove();
-              //  direction = 
+                //  direction = 
                 prevNode = currentNode;
                 currentNode = null;
 
@@ -83,14 +88,22 @@ public class Blinky : BaseGhost {
         if (GetState() == GhostState.Chase)
         {
             Vector2 pacManPos = pacMan.transform.position;
-            targTile = new Vector2(Mathf.RoundToInt(pacManPos.x), Mathf.RoundToInt(pacManPos.y));
-        }
+            Vector2 pacManForward = pacMan.GetComponent<Controller>().orientation;
+
+            int pacManPosX = Mathf.RoundToInt(pacManPos.x);
+            int pacManPosY = Mathf.RoundToInt(pacManPos.y);
+
+            Vector2 pacManTile = new Vector2(pacManPosX, pacManPosY);
+            targTile = pacManTile + (4 * pacManForward);
+            Debug.Log("PINKY targ " + targTile + " pacman pos " + pacManTile);
+            return targTile;
+    }
 
         if (GetState() == GhostState.Scatter)
         {
-            Debug.Log("Blabla");
             Vector2 myCorner = myCornerNode.transform.position;
-            targTile = myCorner;
+    targTile = myCorner;
+            return targTile;
         }
 
         return targTile;
@@ -99,7 +112,7 @@ public class Blinky : BaseGhost {
     public Node CanMove()
     {
         Node moveTo = null;
-        targetTile = UpdateTarget(); 
+        targetTile = UpdateTarget();
         Node[] foundNodes = new Node[4];
         Vector2[] possiblePaths = new Vector2[4];
         int nodeCounter = 0;
@@ -142,4 +155,13 @@ public class Blinky : BaseGhost {
         return moveTo;
     }
 
+    private void ReleaseGhost()
+    {
+        ghostReleaseTimer += Time.deltaTime;
+
+        if (ghostReleaseTimer > myReleaseTimer && inGhostHouse)
+        {
+            inGhostHouse = false;
+        }
+    }
 }
