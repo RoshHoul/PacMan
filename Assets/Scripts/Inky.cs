@@ -36,6 +36,9 @@ public class Inky : BaseGhost
     protected override void Update()
     {
         targetTile = UpdateTarget();
+        if (inGhostHouse)
+            ReleaseGhost();
+        
         base.Update();
 
     }
@@ -78,6 +81,15 @@ public class Inky : BaseGhost
         return targTile;
     }
 
+    private void ReleaseGhost()
+    {
+        int scoreSoFar = pacMan.GetComponent<Controller>().pCollected;
+
+        if (scoreSoFar >= 30)
+        {
+            inGhostHouse = false;
+        }
+    }
 
 }
 

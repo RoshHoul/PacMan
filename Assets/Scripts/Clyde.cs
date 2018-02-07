@@ -36,6 +36,9 @@ public class Clyde : BaseGhost
     protected override void Update()
     {
         targetTile = UpdateTarget();
+        if (inGhostHouse)
+            ReleaseGhost();
+        
         base.Update();
 
     }
@@ -52,19 +55,35 @@ public class Clyde : BaseGhost
             int pacManPosY = Mathf.RoundToInt(pacManPos.y);
 
             Vector2 pacManTile = new Vector2(pacManPosX, pacManPosY);
-            targTile = pacManTile + (4 * pacManForward);
-            Debug.Log("Clyde targ " + targTile + " pacman pos " + pacManTile);
-            return targTile;
+            int dist = Mathf.RoundToInt(DistanceBetweenTwoNodes(transform.position, pacManTile));
+
+            if (dist > 8)
+            {
+                return pacManTile;
+            } else
+            {
+                targTile = myCornerNode.transform.position;
+                return targTile;
+            }
         }
 
         if (GetState() == GhostState.Scatter)
         {
-            Vector2 myCorner = myCornerNode.transform.position;
-            targTile = myCorner;
+            targTile = myCornerNode.transform.position;
             return targTile;
         }
 
         return targTile;
+    }
+
+    private void ReleaseGhost()
+    {
+        int scoreSoFar = pacMan.GetComponent<Controller>().pCollected;
+
+        if (scoreSoFar >= 50)
+        {
+            inGhostHouse = false;
+        }
     }
 
 

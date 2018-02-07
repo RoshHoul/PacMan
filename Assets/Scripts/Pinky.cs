@@ -7,6 +7,8 @@ public class Pinky : BaseGhost {
     public Node startingNode;
     public Node myCornerNode;
  
+    public float myReleaseTimer = 5.0f;
+    private float ghostReleaseTimer = 0.0f;
 
     // Use this for initialization
     protected override void Start()
@@ -34,6 +36,7 @@ public class Pinky : BaseGhost {
     protected override void Update()
     {
         targetTile = UpdateTarget();
+        ReleaseGhost();
         base.Update();
 
     }
@@ -57,11 +60,23 @@ public class Pinky : BaseGhost {
         if (GetState() == GhostState.Scatter)
         {
             Vector2 myCorner = myCornerNode.transform.position;
-    targTile = myCorner;
+            targTile = myCorner;
             return targTile;
         }
 
         return targTile;
+
+    }
+
+
+    private void ReleaseGhost()
+    {
+        ghostReleaseTimer += Time.deltaTime;
+
+        if (ghostReleaseTimer > myReleaseTimer && inGhostHouse)
+        {
+            inGhostHouse = false;
+        }
     }
 
 

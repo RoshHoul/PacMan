@@ -17,7 +17,6 @@ public class BaseGhost : MonoBehaviour
 
     protected Node prevNode, currentNode, nextNode;
 
-    public float myReleaseTimer = 5.0f;
 
     public int ScatterModeTimer1 = 7;
     public int ScatterModeTimer2 = 5;
@@ -32,7 +31,6 @@ public class BaseGhost : MonoBehaviour
     private int modeChangeIteration = 0;
     private float modeChangeTimer = 0f;
 
-    private float ghostReleaseTimer = 0.0f;
 
     private GameBoard GM;
     public GameObject pacMan;
@@ -47,7 +45,6 @@ public class BaseGhost : MonoBehaviour
 
     protected virtual void Update()
     {
-        ReleaseGhost();
         UpdateState();
         Move();
 
@@ -83,9 +80,18 @@ public class BaseGhost : MonoBehaviour
 
     void Move()
     {
+        GhostState tempState = GhostState.Scatter;
+        if (prevNode != null)
+            Debug.Log("prevNode " + prevNode.name);
+        if (currentNode != null)
+            Debug.Log(" currNode " + currentNode.name);
+        if (nextNode != null) 
+            Debug.Log(" nextNode " + nextNode.name);
+
+        Debug.Log("IN BEGINNING OF MOVE " + GetState() + " " + tempState);
+
         if (nextNode != currentNode && nextNode != null && !inGhostHouse)
         {
-            Debug.Log(transform.gameObject.name + " Is ready");
             if (OverShotTarget(nextNode, prevNode))
             {
                 currentNode = nextNode;
@@ -100,7 +106,6 @@ public class BaseGhost : MonoBehaviour
                 }
 
                 nextNode = CanMove();
-                //  direction = 
                 prevNode = currentNode;
                 currentNode = null;
 
@@ -109,7 +114,34 @@ public class BaseGhost : MonoBehaviour
             {
                 transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
             }
-        } // TUK PRAVIM ELSE IF ZA SMQNA NA STATE-A
+        }
+
+        if ((/*tempState != GetState() && */!inGhostHouse && nextNode == null))
+        {
+            Debug.Log("in elif 1 " + tempState);
+            //prevNode = nextNode;
+            nextNode = SwitchDirection();
+            tempState = GetState();
+            direction = direction * -1;
+            transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
+            Debug.Log("in elif 2 " + tempState);
+        }// TUK PRAVIM ELSE IF ZA SMQNA NA STATE-A
+    }
+
+    public Node SwitchDirection()
+    {
+        if (prevNode != null)
+            Debug.Log(prevNode.name);
+        Node moveTo = null;
+        Debug.Log("Switch Dir");
+        for (int i = 0; i < prevNode.neighbours.Length; i++)
+        {
+            if (prevNode.possiblePaths[i] == direction * -1)
+            {
+                moveTo = prevNode.neighbours[i];
+            }
+        }
+        return moveTo;
     }
 
     public Node CanMove()
@@ -179,15 +211,7 @@ public class BaseGhost : MonoBehaviour
         return distance;
     }
 
-    private void ReleaseGhost()
-    {
-        ghostReleaseTimer += Time.deltaTime;
 
-        if (ghostReleaseTimer > myReleaseTimer && inGhostHouse)
-        {
-            inGhostHouse = false;
-        }
-    }
     void UpdateState()
     {
         if (currentState != GhostState.Frightened)
@@ -241,8 +265,13 @@ public class BaseGhost : MonoBehaviour
 
     void SetState(GhostState newState)
     {
-            prevState = currentState;
-            currentState = newState;
+        prevState = currentState;
+        currentState = newState;
+        if (!inGhostHouse)
+        {
+            prevNode = nextNode;
+            nextNode = null;
+        }
     }
 
     public GhostState GetState()
