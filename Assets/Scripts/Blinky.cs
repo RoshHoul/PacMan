@@ -6,7 +6,11 @@ public class Blinky : BaseGhost {
 
     public int speed = 5;
     private Node prevNode, currentNode, nextNode;
-    private Vector2 direction, nextDirection;
+    private Vector2 direction;
+    private Vector2 nextDirection;
+    private Vector2 targetTile;
+    public Node myCornerNode;
+    public bool inStartingPosition;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -18,23 +22,25 @@ public class Blinky : BaseGhost {
             currentNode = node;
         } 
 
-        prevNode = currentNode;
-        direction = Vector2.left;
+        if (inStartingPosition)
+        {
+            direction = Vector2.left;
+            nextNode = CanMove();
+        }
 
-        Vector2 pacManPos = pacMan.transform.position;
-        Vector2 targetTile = new Vector2(Mathf.RoundToInt(pacManPos.x), Mathf.RoundToInt(pacManPos.y));
-        //  nextNode = GetNodeAtPosition(targetTile);
-        nextNode = CanMove();
-        
+        prevNode = currentNode;
 
     }
 	
 	// Update is called once per frame
 	protected override void Update () {
         base.Update();
-        Debug.Log("currentState " + currentState);
+        Debug.Log("currentState " + GetState());
         Move();
+       
 	}
+
+
 
     void Move()
     {
@@ -66,11 +72,30 @@ public class Blinky : BaseGhost {
         }
     }
 
+    public Vector2 UpdateTarget()
+    {
+        Vector2 targTile = new Vector2();
+        if (GetState() == GhostState.Chase)
+        {
+            Vector2 pacManPos = pacMan.transform.position;
+            targTile = new Vector2(Mathf.RoundToInt(pacManPos.x), Mathf.RoundToInt(pacManPos.y));
+        }
+
+        if (GetState() == GhostState.Scatter)
+        {
+            Debug.Log("Blabla");
+            Vector2 myCorner = myCornerNode.transform.position;
+            targTile = myCorner;
+        }
+
+        return targTile;
+    }
+
     public Node CanMove()
     {
         Node moveTo = null;
         Vector2 pacManPos = pacMan.transform.position;
-        Vector2 targetTile = new Vector2(Mathf.RoundToInt(pacManPos.x), Mathf.RoundToInt(pacManPos.y));
+        targetTile = UpdateTarget(); 
         Node[] foundNodes = new Node[4];
         Vector2[] possiblePaths = new Vector2[4];
         int nodeCounter = 0;
@@ -112,4 +137,5 @@ public class Blinky : BaseGhost {
 
         return moveTo;
     }
+
 }

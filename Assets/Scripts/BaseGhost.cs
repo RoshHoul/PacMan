@@ -18,6 +18,7 @@ public class BaseGhost : MonoBehaviour
     public int ScatterModeTimer2 = 5;
     public int ChaseModeTimer = 20;
 
+
     private int modeChangeIteration = 0;
     private float modeChangeTimer = 0f;
 
@@ -148,7 +149,7 @@ public class BaseGhost : MonoBehaviour
         currentState = newState;
     }
 
-    GhostState GetState()
+    public GhostState GetState()
     {
         return currentState;
 
