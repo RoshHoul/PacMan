@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pinky : BaseGhost {
+public class Clyde : BaseGhost
+{
 
     public Node startingNode;
     public Node myCornerNode;
- 
+
 
     // Use this for initialization
     protected override void Start()
@@ -17,7 +18,8 @@ public class Pinky : BaseGhost {
         if (node != null)
         {
             currentNode = node;
-        } else
+        }
+        else
         {
             transform.position = startingNode.transform.position;
             currentNode = startingNode;
@@ -51,13 +53,14 @@ public class Pinky : BaseGhost {
 
             Vector2 pacManTile = new Vector2(pacManPosX, pacManPosY);
             targTile = pacManTile + (4 * pacManForward);
+            Debug.Log("Clyde targ " + targTile + " pacman pos " + pacManTile);
             return targTile;
-    }
+        }
 
         if (GetState() == GhostState.Scatter)
         {
             Vector2 myCorner = myCornerNode.transform.position;
-    targTile = myCorner;
+            targTile = myCorner;
             return targTile;
         }
 
@@ -66,3 +69,4 @@ public class Pinky : BaseGhost {
 
 
 }
+

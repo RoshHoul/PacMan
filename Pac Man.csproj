@@ -86,9 +86,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BaseGhost.cs" />
     <Compile Include="Assets\Scripts\Blinky.cs" />
+    <Compile Include="Assets\Scripts\Clyde.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\GameBoard.cs" />
     <Compile Include="Assets\Scripts\Ghost.cs" />
+    <Compile Include="Assets\Scripts\Inky.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Pinky.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />

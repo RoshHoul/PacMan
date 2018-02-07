@@ -17,6 +17,8 @@ public class BaseGhost : MonoBehaviour
 
     protected Node prevNode, currentNode, nextNode;
 
+    public float myReleaseTimer = 5.0f;
+
     public int ScatterModeTimer1 = 7;
     public int ScatterModeTimer2 = 5;
     public int ChaseModeTimer = 20;
@@ -30,9 +32,11 @@ public class BaseGhost : MonoBehaviour
     private int modeChangeIteration = 0;
     private float modeChangeTimer = 0f;
 
+    private float ghostReleaseTimer = 0.0f;
 
     private GameBoard GM;
     public GameObject pacMan;
+    private bool stateChange = false;
 
     protected virtual void Start()
     {
@@ -43,8 +47,10 @@ public class BaseGhost : MonoBehaviour
 
     protected virtual void Update()
     {
+        ReleaseGhost();
         UpdateState();
         Move();
+
     }
 
     public GameObject GetPortal(Vector2 pos)
@@ -79,6 +85,7 @@ public class BaseGhost : MonoBehaviour
     {
         if (nextNode != currentNode && nextNode != null && !inGhostHouse)
         {
+            Debug.Log(transform.gameObject.name + " Is ready");
             if (OverShotTarget(nextNode, prevNode))
             {
                 currentNode = nextNode;
@@ -102,17 +109,15 @@ public class BaseGhost : MonoBehaviour
             {
                 transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
             }
-        }
+        } // TUK PRAVIM ELSE IF ZA SMQNA NA STATE-A
     }
 
     public Node CanMove()
     {
         Node moveTo = null;
-      //  targetTile = UpdateTarget();
         Node[] foundNodes = new Node[4];
         Vector2[] possiblePaths = new Vector2[4];
         int nodeCounter = 0;
-
 
         for (int i = 0; i < currentNode.neighbours.Length; i++)
         {
@@ -121,7 +126,7 @@ public class BaseGhost : MonoBehaviour
                 foundNodes[nodeCounter] = currentNode.neighbours[i];
                 possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
                 nodeCounter++;
-            }
+            } 
         }
 
         if (foundNodes.Length == 1)
@@ -146,7 +151,6 @@ public class BaseGhost : MonoBehaviour
                 }
             }
         }
-
 
         return moveTo;
     }
@@ -175,6 +179,15 @@ public class BaseGhost : MonoBehaviour
         return distance;
     }
 
+    private void ReleaseGhost()
+    {
+        ghostReleaseTimer += Time.deltaTime;
+
+        if (ghostReleaseTimer > myReleaseTimer && inGhostHouse)
+        {
+            inGhostHouse = false;
+        }
+    }
     void UpdateState()
     {
         if (currentState != GhostState.Frightened)
@@ -228,8 +241,8 @@ public class BaseGhost : MonoBehaviour
 
     void SetState(GhostState newState)
     {
-        prevState = currentState;
-        currentState = newState;
+            prevState = currentState;
+            currentState = newState;
     }
 
     public GhostState GetState()
@@ -237,4 +250,6 @@ public class BaseGhost : MonoBehaviour
         return currentState;
 
     }
+
+
 }
