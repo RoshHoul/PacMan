@@ -63,12 +63,12 @@ public class Pinky : BaseGhost {
         //if (GetState() == GhostState.Frightened)
         //{
         //    targetTile = RandomMovement();
-        //}
+        ////}
 
-        else if (GetState() == GhostState.Consumed)
-        {
-            targTile = startingNode.transform.position;
-        }
+        //else if (GetState() == GhostState.Consumed)
+        //{
+        //    targTile = startingNode.transform.position;
+        //}
     return targTile;
 
     }

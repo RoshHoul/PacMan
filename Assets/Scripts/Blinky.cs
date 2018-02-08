@@ -54,10 +54,14 @@ public class Blinky : BaseGhost {
         //    targetTile = RandomMovement();
         //}
 
-        else if (GetState() == GhostState.Consumed)
-        {
-            targTile = startingNode.transform.position;
-        }
+        //else if (GetState() == GhostState.Consumed)
+        //{
+        //    Debug.Log("BLABLBALBALBA");
+        //    targTile = ghostHouse.transform.position;
+        //    Debug.Log(targTile);
+        //}
+
+        
         return targTile;
     }
 

@@ -11,6 +11,8 @@ public class GameBoard : MonoBehaviour {
     private int level = 1;
     public Text levelUI;
     public Text points;
+    public Text life;
+    private int lives = 0;
 
     public bool pacManLost = false;
 
@@ -73,7 +75,8 @@ public class GameBoard : MonoBehaviour {
 
     void Init()
     {
-        
+        lives = pacMan.GetComponent<Controller>().life;
+
         for (int i = 0; i < ghosts.Length; i++)
         {
             if (ghosts[i].GetComponent<Pinky>() != null)
@@ -120,21 +123,84 @@ public class GameBoard : MonoBehaviour {
         if (level == 1)
         {
 
-            Debug.Log("level1");
             ghostSpeed = (25 * ghostsGeneralSpeed) / 100;
             ghostTunnelSpeed = (60 * ghostsGeneralSpeed) / 100;
             ghostFrightSpeed = (50 * ghostsGeneralSpeed) / 100; 
-            Debug.Log("ghost values " + ghostSpeed + " " + ghostTunnelSpeed + " " + ghostFrightSpeed);
             ElroyDotCount1 = 20;
             ElroyDotCount2 = 10;
             pacManSpeed = (20  * pacManGeneralSpeed) / 100;
-            frightPacManSpeed = (10 * pacManGeneralSpeed) / 100;
-            pacManDotsSpeed = (25 * pacManGeneralSpeed) / 100;
-            frightDuration = 7;
+            frightPacManSpeed = (21 * pacManGeneralSpeed) / 100;
+            pacManDotsSpeed = (29 * pacManGeneralSpeed) / 100;
+            frightDuration = 6;
             inkyReleaseCounter = 30;
             clydeReleaseCounter = 50;
 
         }
+
+        if (level == 2)
+        {
+
+            ghostSpeed = (15 * ghostsGeneralSpeed) / 100;
+            ghostTunnelSpeed = (55 * ghostsGeneralSpeed) / 100;
+            ghostFrightSpeed = (45 * ghostsGeneralSpeed) / 100; 
+            ElroyDotCount1 = 40;
+            ElroyDotCount2 = 20;
+            pacManSpeed = (10  * pacManGeneralSpeed) / 100;
+            frightPacManSpeed = (17 * pacManGeneralSpeed) / 100;
+            pacManDotsSpeed = (21 * pacManGeneralSpeed) / 100;
+            frightDuration = 5;
+            inkyReleaseCounter = 30;
+            clydeReleaseCounter = 50;
+        }
+
+        if (level == 3)
+        {
+
+            ghostSpeed = (15 * ghostsGeneralSpeed) / 100;
+            ghostTunnelSpeed = (55 * ghostsGeneralSpeed) / 100;
+            ghostFrightSpeed = (45 * ghostsGeneralSpeed) / 100;
+            ElroyDotCount1 = 40;
+            ElroyDotCount2 = 20;
+            pacManSpeed = (10 * pacManGeneralSpeed) / 100;
+            frightPacManSpeed = (17 * pacManGeneralSpeed) / 100;
+            pacManDotsSpeed = (21 * pacManGeneralSpeed) / 100;
+            frightDuration = 4;
+            inkyReleaseCounter = 30;
+            clydeReleaseCounter = 50;
+        }
+
+        if (level == 4)
+        {
+
+            ghostSpeed = (15 * ghostsGeneralSpeed) / 100;
+            ghostTunnelSpeed = (55 * ghostsGeneralSpeed) / 100;
+            ghostFrightSpeed = (45 * ghostsGeneralSpeed) / 100;
+            ElroyDotCount1 = 40;
+            ElroyDotCount2 = 20;
+            pacManSpeed = (10 * pacManGeneralSpeed) / 100;
+            frightPacManSpeed = (17 * pacManGeneralSpeed) / 100;
+            pacManDotsSpeed = (21 * pacManGeneralSpeed) / 100;
+            frightDuration = 3;
+            inkyReleaseCounter = 30;
+            clydeReleaseCounter = 50;
+        }
+
+        if (level == 5)
+        {
+
+            ghostSpeed = (5 * ghostsGeneralSpeed) / 100;
+            ghostTunnelSpeed = (50 * ghostsGeneralSpeed) / 100;
+            ghostFrightSpeed = (40 * ghostsGeneralSpeed) / 100;
+            ElroyDotCount1 = 40;
+            ElroyDotCount2 = 20;
+            pacManSpeed = (0 * pacManGeneralSpeed) / 100;
+            frightPacManSpeed = (13 * pacManGeneralSpeed) / 100;
+            pacManDotsSpeed = (21 * pacManGeneralSpeed) / 100;
+            frightDuration = 2;
+            inkyReleaseCounter = 30;
+            clydeReleaseCounter = 50;
+        }
+
     }
 
     public int CurrentLevel()
@@ -155,11 +221,18 @@ public class GameBoard : MonoBehaviour {
 
         if (pacManLost)
         {
-            GetLevelStats();
-            inkyReleaseCounter = 0;
-            clydeReleaseCounter = 1;
-            Init();
-            pacManLost = false;
+            if (pacMan.GetComponent<Controller>().life >= 0)
+            {
+                pacMan.GetComponent<Controller>().life--;
+                GetLevelStats();
+                inkyReleaseCounter = 0;
+                clydeReleaseCounter = 1;
+                Init();
+                pacManLost = false;
+            } else
+            {
+                //GameOverScreen
+            }
         }
 
 	}
@@ -168,6 +241,7 @@ public class GameBoard : MonoBehaviour {
     {
         levelUI.text = level.ToString();
         points.text = pacMan.points.ToString();
+        life.text = lives.ToString();
     }
 
     void ResetLife()

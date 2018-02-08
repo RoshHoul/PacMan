@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour {
     [HideInInspector]
     public int pCollected = 0;
     public int points = 0;
+    public int life = 3;
 
     private float frightDuration;
     private float frightCounter = 0;
@@ -304,6 +305,8 @@ public class Controller : MonoBehaviour {
         {
             if (currentNode.possiblePaths[i] == dir)
             {
+                if (currentNode.GetComponent<Tile>().isHouseEntry && currentNode.possiblePaths[i] == Vector2.down)
+                    continue;
                 moveTo = currentNode.neighbours[i];
                 break;
             }

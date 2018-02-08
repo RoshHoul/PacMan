@@ -1294,7 +1294,7 @@ Prefab:
         type: 2}
       propertyPath: ghostHouse
       value: 
-      objectReference: {fileID: 950272732}
+      objectReference: {fileID: 1687347148}
     - target: {fileID: 114393749030665792, guid: c492c59e627adb64a8811a59c127709f,
         type: 2}
       propertyPath: eyesUp
@@ -23835,7 +23835,7 @@ Prefab:
         type: 2}
       propertyPath: ghostHouse
       value: 
-      objectReference: {fileID: 950272732}
+      objectReference: {fileID: 1687347148}
     - target: {fileID: 114817083268260790, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
         type: 2}
       propertyPath: eyesUp
@@ -26292,7 +26292,7 @@ Prefab:
         type: 2}
       propertyPath: ghostHouse
       value: 
-      objectReference: {fileID: 1529685406}
+      objectReference: {fileID: 1585654277}
     - target: {fileID: 114100606997051218, guid: 2c88f4790c589dd4b8aaf7e729dbc473,
         type: 2}
       propertyPath: eyesUp
@@ -27240,6 +27240,7 @@ MonoBehaviour:
   ghosts: []
   levelUI: {fileID: 482698276}
   points: {fileID: 694126755}
+  life: {fileID: 2010388555}
   pacManLost: 0
 --- !u!4 &1012395939
 Transform:
@@ -57953,7 +57954,7 @@ Prefab:
         type: 2}
       propertyPath: ghostHouse
       value: 
-      objectReference: {fileID: 1529685406}
+      objectReference: {fileID: 1585654277}
     - target: {fileID: 114441137279179772, guid: 7e8605cf201145b4b88380c68d225fde,
         type: 2}
       propertyPath: eyesUp

@@ -226,10 +226,15 @@ public class BaseGhost : MonoBehaviour
             transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
         }
 
-        if (GetState() == GhostState.Frightened && !inGhostHouse)
-        {
-            targetTile = RandomMovement();
-        }
+        //if (GetState() == GhostState.Frightened && !inGhostHouse)
+        //{
+        //    targetTile = RandomMovement();
+        //}
+
+        //if (GetState() == GhostState.Consumed)
+        //{
+        //    targetTile = ghostHouse.transform.position;
+        //}
 
     }
 
@@ -262,15 +267,24 @@ public class BaseGhost : MonoBehaviour
 
     public Node CanMove()
     {
-        Node moveTo = null;
+        if (GetState() == GhostState.Frightened && !inGhostHouse)
+        {
+            targetTile = RandomMovement();
+        }
+
+        else if (GetState() == GhostState.Consumed)
+        {
+            targetTile = ghostHouse.transform.position;
+        }
+
+            Node moveTo = null;
         Node[] foundNodes = new Node[4];
         Vector2[] possiblePaths = new Vector2[4];
         int nodeCounter = 0;
 
         if (currentNode == null)
         {
-            Debug.Log(transform.name + " Nqmam current");
-            return null;
+            currentNode = GetNodeAtPosition(transform.position);
         }
 
         for (int i = 0; i < currentNode.neighbours.Length; i++)
@@ -367,14 +381,21 @@ public class BaseGhost : MonoBehaviour
 
         if (ghostRect.Overlaps(pacManRect))
         {
-            if (GetState() == GhostState.Frightened)
+            if (GetState() == GhostState.Frightened || GetState() == GhostState.Consumed)
             {
-                inGhostHouse = true;
+                Debug.Log("SEGA SPECHELI!");
+                pacMan.GetComponent<Controller>().points += 200;
+                //inGhostHouse = true;
+
                 SetState(GhostState.Consumed);
+
+                return;
             }
             else
             {
-             //   GM.pacManLost = true;
+                Debug.Log("yes no maybe?");
+                GM.pacManLost = true;
+                return;
             }
         }
     }

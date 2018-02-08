@@ -71,10 +71,10 @@ public class Clyde : BaseGhost
         //    targetTile = RandomMovement();
         //}
 
-        else if (GetState() == GhostState.Consumed)
-        {
-            targTile = startingNode.transform.position;
-        }
+        //else if (GetState() == GhostState.Consumed)
+        //{
+        //    targTile = startingNode.transform.position;
+        //}
         return targTile;
     }
 
