@@ -12,17 +12,29 @@ public class Controller : MonoBehaviour {
     [HideInInspector]
     public int pCollected = 0;
 
+    public enum PacManState
+    {
+        Dead,
+        Normal,
+        Energized,
+        Win
+    }
+
+    public PacManState currentState, prevState;
+
+    private int points = 0;
     private Animator anim;
     private Sprite currentSprite;
-
     private Vector2 direction = Vector2.zero;
     
     private Vector2 nextDirection;
     private Node currentNode, previousNode, targetNode;
     private GameBoard GM;
 
+
     private void Start()
     {
+        SetState(PacManState.Normal);
         anim = GetComponent<Animator>();
         currentSprite = GetComponent<SpriteRenderer>().sprite;
         GM = GameObject.Find("_GM").GetComponent<GameBoard>();
@@ -31,7 +43,6 @@ public class Controller : MonoBehaviour {
         if (node != null)
         {
             currentNode = node;
-            Debug.Log(currentNode);
         }
 
         direction = Vector2.left;
@@ -216,14 +227,28 @@ public class Controller : MonoBehaviour {
 
             if (tile != null)
             {
-                if (!tile.isConsumed && (tile.isPellet || tile.isSuperPellet))
+                if (!tile.isConsumed && tile.isPellet) 
                 {
                     obj.GetComponent<SpriteRenderer>().enabled = false;
                     tile.isConsumed = true;
                     pCollected++;
+                    points += 10;
+                }
+
+                if (!tile.isConsumed && tile.isSuperPellet) {
+                    obj.GetComponent<SpriteRenderer>().enabled = false;
+                    tile.isConsumed = true;
+                    pCollected++;
+                    points += 50;
+                    Energize();
                 }
             }
         }
+    }
+
+    void Energize()
+    {
+        
     }
 
     Node CanMove(Vector2 dir)
@@ -294,5 +319,11 @@ public class Controller : MonoBehaviour {
             }
         }
         return null;
+    }
+
+    void SetState(PacManState newState)
+    {
+        prevState = currentState;
+        currentState = newState;
     }
 }

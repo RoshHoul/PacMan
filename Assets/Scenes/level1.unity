@@ -1166,7 +1166,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4017886579299400, guid: c492c59e627adb64a8811a59c127709f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: -12.2
       objectReference: {fileID: 0}
     - target: {fileID: 4017886579299400, guid: c492c59e627adb64a8811a59c127709f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1215,6 +1215,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549063969061842, guid: c492c59e627adb64a8811a59c127709f, type: 2}
+      propertyPath: m_TagString
+      value: Ghosts
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c492c59e627adb64a8811a59c127709f, type: 2}
@@ -5986,11 +5990,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -6698,11 +6702,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -7843,11 +7847,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -9322,11 +9326,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -13198,11 +13202,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -15649,11 +15653,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -22902,6 +22906,10 @@ Prefab:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1965776062818924, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
+      propertyPath: m_TagString
+      value: Ghosts
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
   m_IsPrefabParent: 0
@@ -25194,11 +25202,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -25212,7 +25220,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4952608709283474, guid: 2c88f4790c589dd4b8aaf7e729dbc473, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 31.2
       objectReference: {fileID: 0}
     - target: {fileID: 4952608709283474, guid: 2c88f4790c589dd4b8aaf7e729dbc473, type: 2}
       propertyPath: m_LocalPosition.y
@@ -25256,6 +25264,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238776192198606, guid: 2c88f4790c589dd4b8aaf7e729dbc473, type: 2}
+      propertyPath: m_TagString
+      value: Ghosts
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c88f4790c589dd4b8aaf7e729dbc473, type: 2}
@@ -25306,11 +25318,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -26173,6 +26185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310c4f1416ee2eb42ba22ce82f700863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghosts: []
 --- !u!4 &1012395939
 Transform:
   m_ObjectHideFlags: 0
@@ -30975,11 +30988,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -33319,11 +33332,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -46476,11 +46489,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -53596,11 +53609,11 @@ Prefab:
     - target: {fileID: 212894652404448516, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsInner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -55598,6 +55611,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853599746453228, guid: 7e8605cf201145b4b88380c68d225fde, type: 2}
+      propertyPath: m_TagString
+      value: Ghosts
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8605cf201145b4b88380c68d225fde, type: 2}

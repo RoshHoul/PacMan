@@ -13,22 +13,6 @@ public class Pinky : BaseGhost {
     // Use this for initialization
     protected override void Start()
     {
-        base.Start();
-
-        Node node = GetNodeAtPosition(transform.localPosition);
-        if (node != null)
-        {
-            currentNode = node;
-        } else
-        {
-            transform.position = startingNode.transform.position;
-            currentNode = startingNode;
-        }
-
-        direction = Vector2.left;
-        nextNode = CanMove();
-
-        prevNode = currentNode;
 
     }
 
@@ -39,6 +23,18 @@ public class Pinky : BaseGhost {
         ReleaseGhost();
         base.Update();
 
+    }
+
+    public override void Init()
+    {
+        base.Init();
+        transform.position = startingNode.transform.position;
+        currentNode = startingNode;
+
+        direction = Vector2.left;
+        nextNode = CanMove();
+
+        prevNode = currentNode;
     }
 
     public Vector2 UpdateTarget()

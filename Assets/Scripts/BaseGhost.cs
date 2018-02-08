@@ -12,6 +12,7 @@ public class BaseGhost : MonoBehaviour
     };
 
     public int speed = 5;
+    private int normalSpeed;
     public GhostState currentState = GhostState.Scatter;
     public GhostState prevState;
 
@@ -20,6 +21,7 @@ public class BaseGhost : MonoBehaviour
 
     public int ScatterModeTimer1 = 7;
     public int ScatterModeTimer2 = 5;
+    public float ScatterModeTimer3 = 1 / 60;
     public int ChaseModeTimer = 20;
 
     public bool inGhostHouse;
@@ -38,9 +40,7 @@ public class BaseGhost : MonoBehaviour
 
     protected virtual void Start()
     {
-        pacMan = GameObject.Find("Pac Man");
-        GM = GameObject.Find("_GM").GetComponent<GameBoard>();
-        currentState = GhostState.Scatter;
+        //Init();
     }
 
     protected virtual void Update()
@@ -48,6 +48,14 @@ public class BaseGhost : MonoBehaviour
         UpdateState();
         Move();
 
+    }
+
+    public virtual void Init()
+    {
+        normalSpeed = speed;
+        pacMan = GameObject.Find("Pac Man");
+        GM = GameObject.Find("_GM").GetComponent<GameBoard>();
+        currentState = GhostState.Scatter;
     }
 
     public GameObject GetPortal(Vector2 pos)
@@ -81,14 +89,6 @@ public class BaseGhost : MonoBehaviour
     void Move()
     {
         GhostState tempState = GhostState.Scatter;
-        if (prevNode != null)
-            Debug.Log("prevNode " + prevNode.name);
-        if (currentNode != null)
-            Debug.Log(" currNode " + currentNode.name);
-        if (nextNode != null) 
-            Debug.Log(" nextNode " + nextNode.name);
-
-        Debug.Log("IN BEGINNING OF MOVE " + GetState() + " " + tempState);
 
         if (nextNode != currentNode && nextNode != null && !inGhostHouse)
         {
@@ -106,9 +106,19 @@ public class BaseGhost : MonoBehaviour
                 }
 
                 nextNode = CanMove();
+                GameObject nextPortal = GetPortal(nextNode.transform.position);
+                if (nextPortal != null) 
+                {
+                    int tempSpeed = speed;
+                    speed = tempSpeed / 2;
+                }
+                else if ((nextPortal == null) && (portal == null))
+                {
+                    speed = normalSpeed;
+                }
                 prevNode = currentNode;
                 currentNode = null;
-
+                
             }
             else
             {
@@ -116,24 +126,18 @@ public class BaseGhost : MonoBehaviour
             }
         }
 
-        if ((/*tempState != GetState() && */!inGhostHouse && nextNode == null))
+        if ((!inGhostHouse && nextNode == null))
         {
-            Debug.Log("in elif 1 " + tempState);
-            //prevNode = nextNode;
             nextNode = SwitchDirection();
             tempState = GetState();
             direction = direction * -1;
             transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
-            Debug.Log("in elif 2 " + tempState);
-        }// TUK PRAVIM ELSE IF ZA SMQNA NA STATE-A
+        }
     }
 
     public Node SwitchDirection()
     {
-        if (prevNode != null)
-            Debug.Log(prevNode.name);
         Node moveTo = null;
-        Debug.Log("Switch Dir");
         for (int i = 0; i < prevNode.neighbours.Length; i++)
         {
             if (prevNode.possiblePaths[i] == direction * -1)
@@ -250,9 +254,15 @@ public class BaseGhost : MonoBehaviour
             }
             else
             {
-                if (GetState() == GhostState.Scatter)
+                if (GetState() == GhostState.Scatter && modeChangeTimer > ScatterModeTimer3)
                 {
                     SetState(GhostState.Chase);
+                    modeChangeTimer = 0;
+                }
+
+                if (GetState() == GhostState.Chase && modeChangeTimer > ChaseModeTimer)
+                {
+                    SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
                 }
             }
@@ -267,7 +277,7 @@ public class BaseGhost : MonoBehaviour
     {
         prevState = currentState;
         currentState = newState;
-        if (!inGhostHouse)
+        if (!inGhostHouse || !(prevState == GhostState.Frightened)) 
         {
             prevNode = nextNode;
             nextNode = null;

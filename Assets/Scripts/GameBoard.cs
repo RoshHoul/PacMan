@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameBoard : MonoBehaviour {
 
     public GameObject[,] board = new GameObject[boardWidth, boardHeigth];
+    public GameObject[] ghosts;
 
     private Controller pacMan;
     private int pelletsCount = 0;
@@ -15,6 +16,10 @@ public class GameBoard : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        ghosts = GameObject.FindGameObjectsWithTag("Ghosts");
+        Init();
+
+
         pacMan = GameObject.Find("Pac Man").GetComponent<Controller>();
         Object[] objects = GameObject.FindObjectsOfType(typeof(GameObject));
 
@@ -23,15 +28,12 @@ public class GameBoard : MonoBehaviour {
             Vector2 pos = o.transform.position;
             Tile tile = o.GetComponent<Tile>();
 
-            if (o.tag == "Pellets")
+            if (o.tag == "Pellets" || o.tag == "PelletsInner")
             {
-                Debug.Log("pellets");
                 if (tile != null)
                 {
-                    Debug.Log("tile");
                     if (tile.isPellet || tile.isSuperPellet) 
                     {
-                        Debug.Log("peller or energ");
                         pelletsCount++;
                     }
                 }
@@ -41,12 +43,34 @@ public class GameBoard : MonoBehaviour {
             }
         }
 
-        Debug.Log("pc is " + pelletsCount);
 	}
+
+    void Init()
+    {
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            if (ghosts[i].GetComponent<Pinky>() != null)
+            {
+                ghosts[i].GetComponent<Pinky>().Init();
+            }
+            else if (ghosts[i].GetComponent<Blinky>() != null)
+            {
+                ghosts[i].GetComponent<Blinky>().Init();
+            }
+            else if (ghosts[i].GetComponent<Inky>() != null)
+            {
+                ghosts[i].GetComponent<Inky>().Init();
+            }
+            else if (ghosts[i].GetComponent<Clyde>() != null)
+            {
+                ghosts[i].GetComponent<Clyde>().Init();
+            }
+
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-      //  Debug.Log("SCORE: " + pacMan.pCollected);
 
 		if (IsGameOver())
         {

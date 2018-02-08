@@ -10,34 +10,25 @@ public class Blinky : BaseGhost {
 
 	// Use this for initialization
 	protected override void Start () {
-        base.Start();
-
-        Node node = GetNodeAtPosition(transform.localPosition);
-        if (node != null)
-        {
-            currentNode = node;
-        } else
-        {
-            transform.position = startingNode.transform.position;
-            currentNode = startingNode;
-        }
-
-        if (inStartingPosition)
-        {
-            direction = Vector2.left;
-            nextNode = CanMove();
-        }
-
-        prevNode = currentNode;
-
     }
 	
 	// Update is called once per frame
 	protected override void Update () {
         targetTile = UpdateTarget();
         base.Update();
-        Debug.Log("currentState " + GetState());
 	}
+
+    public override void Init()
+    {
+        base.Init();
+        transform.position = startingNode.transform.position;
+        currentNode = startingNode;
+
+        direction = Vector2.left;
+        nextNode = CanMove();
+
+        prevNode = currentNode;
+    }
 
     public Vector2 UpdateTarget()
     {
@@ -50,7 +41,6 @@ public class Blinky : BaseGhost {
 
         if (GetState() == GhostState.Scatter)
         {
-            Debug.Log("Blabla");
             Vector2 myCorner = myCornerNode.transform.position;
             targTile = myCorner;
         }
