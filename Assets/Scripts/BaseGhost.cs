@@ -162,6 +162,36 @@ public class BaseGhost : MonoBehaviour
             direction = direction * -1;
             transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
         }
+
+        if (GetState() == GhostState.Frightened)
+        {
+            RandomMovement();
+        }
+
+    }
+
+    public Node RandomMovement()
+    {
+        Node moveTo = null;
+        Node[] foundNodes = new Node[4];
+        Vector2[] possiblePaths = new Vector2[4];
+        int nodeCounter = 0;
+
+        for (int i = 0; i < currentNode.neighbours.Length; i++)
+        {
+            if (currentNode.possiblePaths[i] != direction * -1)
+            {
+                foundNodes[nodeCounter] = currentNode.neighbours[i];
+                possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
+                nodeCounter++;
+            }
+        }
+
+        int seed = Random.Range(0, foundNodes.Length - 1);
+        moveTo = foundNodes[seed];
+        direction = possiblePaths[seed];
+
+        return moveTo;
     }
 
     public Node SwitchDirection()
@@ -202,7 +232,18 @@ public class BaseGhost : MonoBehaviour
 
         if (foundNodes.Length > 1)
         {
+            
             float shortest = 100000;
+
+            //if (GetState() == GhostState.Frightened)
+            //{
+            //    Debug.Log("Frightened babey");
+            //    int seed = Random.Range(0, foundNodes.Length);
+            //    moveTo = foundNodes[seed];
+            //    direction = possiblePaths[seed];
+            //    return moveTo;
+            //}
+
             for (int i = 0; i < foundNodes.Length; i++)
             {
                 if (foundNodes[i] != null)
@@ -299,6 +340,7 @@ public class BaseGhost : MonoBehaviour
         else if (GetState() == GhostState.Frightened)
         {
             frightenedModeTimer += Time.deltaTime;
+
 
             if (frightenedModeTimer >= frightenedModeDuration)
             {
