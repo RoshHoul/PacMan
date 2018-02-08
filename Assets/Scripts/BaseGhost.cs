@@ -30,7 +30,7 @@ public class BaseGhost : MonoBehaviour
     public GhostState currentState = GhostState.Scatter;
     public GhostState prevState;
 
-    protected Node prevNode, currentNode, nextNode;
+    public Node prevNode, currentNode, nextNode;
 
 
     public int ScatterModeTimer1 = 7;
@@ -62,7 +62,6 @@ public class BaseGhost : MonoBehaviour
 
     private bool frightenedModeIsWhite = false;
 
-    public bool eaten = false;
 
     private GameBoard GM;
     public GameObject pacMan;
@@ -78,6 +77,40 @@ public class BaseGhost : MonoBehaviour
         Move();
         CheckCollision();
         UpdateState();
+        CheckIsInGhostHouse();
+    }
+
+    void CheckIsInGhostHouse()
+    {
+            if (GetState() == GhostState.Consumed)
+            {
+                GameObject tile = GetTileAtPos(transform.position);
+
+            if (tile != null)
+            {
+                if (tile.GetComponent<Tile>() != null)
+                {
+                    if (tile.transform.GetComponent<Tile>().isHouse)
+                    {
+                        speed = ghostSpeed;
+                        Node node = GetNodeAtPosition(transform.position);
+
+                        if (node != null)
+                        {
+                            currentNode = node;
+                            direction = Vector2.up;
+                            nextNode = currentNode.neighbours[0];
+
+                            prevNode = currentNode;
+                            SetState(GhostState.Chase);
+                            inGhostHouse = false;
+                            Debug.Log("My name is: " + transform.name + " and my nextNode is " + nextNode.name);
+                            UpdateAnimatorController();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public virtual void Init(float defaultSpeed, float defFrightSpeed, float defTunnelSpeed, float frightDur, int releaseCounter)
@@ -115,6 +148,16 @@ public class BaseGhost : MonoBehaviour
         }
         return null;
 
+    }
+
+    GameObject GetTileAtPos(Vector2 pos)
+    {
+        int tileX = Mathf.RoundToInt(pos.x);
+        int tileY = Mathf.RoundToInt(pos.y);
+
+        GameObject tile = GM.GetComponent<GameBoard>().board[tileX, tileY];
+
+        return tile;
     }
 
     public Node GetNodeAtPosition(Vector2 pos)
@@ -185,36 +228,17 @@ public class BaseGhost : MonoBehaviour
 
         if (GetState() == GhostState.Frightened && !inGhostHouse)
         {
-            RandomMovement();
+            targetTile = RandomMovement();
         }
 
     }
 
-    public Node RandomMovement()
+    public Vector2 RandomMovement()
     {
-        Node moveTo = null;
-        Node[] foundNodes = new Node[4];
-        Vector2[] possiblePaths = new Vector2[4];
-        int nodeCounter = 0;
+        int x = Random.Range(0, 28);
+        int y = Random.Range(0, 36);
 
-        if (currentNode == null)
-            return null;
-
-        for (int i = 0; i < currentNode.neighbours.Length; i++)
-        {
-            if (currentNode.possiblePaths[i] != direction * -1)
-            {
-                foundNodes[nodeCounter] = currentNode.neighbours[i];
-                possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
-                nodeCounter++;
-            }
-        }
-
-        int seed = Random.Range(0, foundNodes.Length - 1);
-        moveTo = foundNodes[seed];
-        direction = possiblePaths[seed];
-
-        return moveTo;
+        return new Vector2(x, y);
     }
 
     public Node SwitchDirection()
@@ -237,6 +261,12 @@ public class BaseGhost : MonoBehaviour
         Vector2[] possiblePaths = new Vector2[4];
         int nodeCounter = 0;
 
+        if (currentNode == null)
+        {
+            Debug.Log(transform.name + " Nqmam current");
+            return null;
+        }
+
         for (int i = 0; i < currentNode.neighbours.Length; i++)
         {
             if (currentNode.possiblePaths[i] != direction * -1)
@@ -244,10 +274,31 @@ public class BaseGhost : MonoBehaviour
                 if (currentNode.tag == "PelletsSpecial" && currentNode.possiblePaths[i] == Vector2.up)
                     continue;
 
-                foundNodes[nodeCounter] = currentNode.neighbours[i];
-                possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
-                nodeCounter++;
-                
+                if (GetState() != GhostState.Consumed)
+                {
+                    GameObject tile = GetTileAtPos(currentNode.transform.position);
+                    if (tile.transform.GetComponent<Tile>().isHouseEntry)
+                    {
+                        if (currentNode.possiblePaths[i] != Vector2.down)
+                        {
+                            foundNodes[nodeCounter] = currentNode.neighbours[i];
+                            possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
+                            nodeCounter++;
+                        }
+                    } else
+                    {
+                        foundNodes[nodeCounter] = currentNode.neighbours[i];
+                        possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
+                        nodeCounter++;
+
+                    }
+                } else
+                {
+                    foundNodes[nodeCounter] = currentNode.neighbours[i];
+                    possiblePaths[nodeCounter] = currentNode.possiblePaths[i];
+                    nodeCounter++;
+                }
+
             }
         }
 
@@ -327,7 +378,6 @@ public class BaseGhost : MonoBehaviour
     {
         if (GetState() != GhostState.Frightened && GetState() != GhostState.Consumed)
         {
-            Debug.Log("AHAAHAHAHAHA" + GetState());
             if (!inTunnel)
             {
                 speed = ghostSpeed;
@@ -381,10 +431,8 @@ public class BaseGhost : MonoBehaviour
         }
         else if (GetState() == GhostState.Frightened)
         {
-            Debug.Log("EHOEEHOEHOEHOEHOEHOE");
             frightenedModeTimer += Time.deltaTime;
             speed = ghostFrightSpeed;
-            Debug.Log("mode timer" + frightenedModeTimer + " " + frightenedModeDuration);
 
             if (frightenedModeTimer >= frightenedModeDuration)
             {

@@ -44,12 +44,20 @@ public class Blinky : BaseGhost {
             targTile = new Vector2(Mathf.RoundToInt(pacManPos.x), Mathf.RoundToInt(pacManPos.y));
         }
 
-        if (GetState() == GhostState.Scatter)
+        else if (GetState() == GhostState.Scatter)
         {
             Vector2 myCorner = myCornerNode.transform.position;
             targTile = myCorner;
         }
+        //else if (GetState() == GhostState.Frightened)
+        //{
+        //    targetTile = RandomMovement();
+        //}
 
+        else if (GetState() == GhostState.Consumed)
+        {
+            targTile = startingNode.transform.position;
+        }
         return targTile;
     }
 

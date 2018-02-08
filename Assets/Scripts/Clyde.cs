@@ -61,12 +61,20 @@ public class Clyde : BaseGhost
             }
         }
 
-        if (GetState() == GhostState.Scatter)
+        else if (GetState() == GhostState.Scatter)
         {
             targTile = myCornerNode.transform.position;
             return targTile;
         }
+        //if (GetState() == GhostState.Frightened)
+        //{
+        //    targetTile = RandomMovement();
+        //}
 
+        else if (GetState() == GhostState.Consumed)
+        {
+            targTile = startingNode.transform.position;
+        }
         return targTile;
     }
 

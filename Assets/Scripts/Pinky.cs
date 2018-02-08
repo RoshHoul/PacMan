@@ -51,22 +51,25 @@ public class Pinky : BaseGhost {
             Vector2 pacManTile = new Vector2(pacManPosX, pacManPosY);
             targTile = pacManTile + (4 * pacManForward);
             return targTile;
-    }
+        }
 
-        if (GetState() == GhostState.Scatter)
+        else if (GetState() == GhostState.Scatter)
         {
             Vector2 myCorner = myCornerNode.transform.position;
             targTile = myCorner;
             return targTile;
         }
 
-        if (eaten)
+        //if (GetState() == GhostState.Frightened)
+        //{
+        //    targetTile = RandomMovement();
+        //}
+
+        else if (GetState() == GhostState.Consumed)
         {
             targTile = startingNode.transform.position;
-            speed += 20;
         }
-
-        return targTile;
+    return targTile;
 
     }
 

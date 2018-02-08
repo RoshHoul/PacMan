@@ -30,7 +30,7 @@ public class Inky : BaseGhost
         base.Init(speed, fright, tunnel, frightDur, releaseCounter);
         release = releaseCounter;
         transform.position = startingNode.transform.position;
-        currentNode = startingNode;
+        currentNode = GetNodeAtPosition(startingNode.transform.position);
 
         direction = Vector2.left;
         nextNode = CanMove();
@@ -66,11 +66,21 @@ public class Inky : BaseGhost
             return targTile;
         }
 
-        if (GetState() == GhostState.Scatter)
+        else if (GetState() == GhostState.Scatter)
         {
             Vector2 myCorner = myCornerNode.transform.position;
             targTile = myCorner;
             return targTile;
+        }
+
+        //if (GetState() == GhostState.Frightened)
+        //{
+        //    targetTile = RandomMovement();
+        //}
+
+        else if (GetState() == GhostState.Consumed)
+        {
+            targTile = startingNode.transform.position;
         }
 
         return targTile;
@@ -83,9 +93,9 @@ public class Inky : BaseGhost
         if (scoreSoFar >= release)
         {
             inGhostHouse = false;
-            Node tempNode = GetNodeAtPosition(transform.position);
+            currentNode = startingNode;
             nextNode = CanMove();
-            Move();
+            prevNode = startingNode;
             Debug.Log("SCORE:INKY " + scoreSoFar);
         }
     }
