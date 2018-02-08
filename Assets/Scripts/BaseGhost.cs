@@ -233,6 +233,12 @@ public class BaseGhost : MonoBehaviour
 
     }
 
+    public void DebugingFunc(int msg)
+    {
+        if (nextNode == null && currentNode == null && prevNode == null)
+            Debug.Log("Kur tate banica " + msg);
+    }
+    
     public Vector2 RandomMovement()
     {
         int x = Random.Range(0, 28);
@@ -363,7 +369,7 @@ public class BaseGhost : MonoBehaviour
         {
             if (GetState() == GhostState.Frightened)
             {
-
+                inGhostHouse = true;
                 SetState(GhostState.Consumed);
             }
             else
@@ -378,22 +384,27 @@ public class BaseGhost : MonoBehaviour
     {
         if (GetState() != GhostState.Frightened && GetState() != GhostState.Consumed)
         {
+            Debug.Log(modeChangeIteration);
             if (!inTunnel)
             {
+                DebugingFunc(1);
                 speed = ghostSpeed;
             }
             modeChangeTimer += Time.deltaTime;
 
             if (modeChangeIteration < 2)
             {
+                DebugingFunc(2);
                 if (GetState() == GhostState.Scatter && modeChangeTimer > ScatterModeTimer1)
                 {
+                    DebugingFunc(3);
                     SetState(GhostState.Chase);
                     modeChangeTimer = 0;
                 }
 
                 if (GetState() == GhostState.Chase && modeChangeTimer > ChaseModeTimer)
                 {
+                    DebugingFunc(4);
                     modeChangeIteration++;
                     SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
@@ -405,6 +416,7 @@ public class BaseGhost : MonoBehaviour
                 {
                     SetState(GhostState.Chase);
                     modeChangeTimer = 0;
+                    
                 }
 
                 if (GetState() == GhostState.Chase && modeChangeTimer > ChaseModeTimer)
@@ -414,19 +426,22 @@ public class BaseGhost : MonoBehaviour
                     modeChangeTimer = 0;
                 }
             }
-            else
+            else if (modeChangeIteration >= 4)
             {
-                if (GetState() == GhostState.Scatter && modeChangeTimer > ScatterModeTimer3)
+                if (GetState() == GhostState.Scatter )
                 {
+                    DebugingFunc(9);
                     SetState(GhostState.Chase);
+
                     modeChangeTimer = 0;
                 }
 
-                if (GetState() == GhostState.Chase && modeChangeTimer > ChaseModeTimer)
+                if (GetState() == GhostState.Chase)
                 {
                     SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
                 }
+
             }
         }
         else if (GetState() == GhostState.Frightened)
@@ -438,7 +453,7 @@ public class BaseGhost : MonoBehaviour
             {
                 frightenedModeTimer = 0;
                 Debug.Log("PREVSTATE IS: " + prevState);
-                SetState(GhostState.Scatter);
+                SetState(prevState);
             }
 
             if (frightenedModeTimer >= startBlinkingAt)
@@ -502,7 +517,7 @@ public class BaseGhost : MonoBehaviour
 
         currentState = newState;
         Debug.Log("currentState + " + currentState);
-        UpdateState();
+        //UpdateState();
         UpdateAnimatorController();
 
     }
