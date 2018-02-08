@@ -66,15 +66,7 @@ public class Clyde : BaseGhost
             targTile = myCornerNode.transform.position;
             return targTile;
         }
-        //if (GetState() == GhostState.Frightened)
-        //{
-        //    targetTile = RandomMovement();
-        //}
 
-        //else if (GetState() == GhostState.Consumed)
-        //{
-        //    targTile = startingNode.transform.position;
-        //}
         return targTile;
     }
 
@@ -89,7 +81,6 @@ public class Clyde : BaseGhost
             nextNode = CanMove();
             prevNode = currentNode;
             Move();
-            Debug.Log("SCORE: " + scoreSoFar);
         }
     }
 

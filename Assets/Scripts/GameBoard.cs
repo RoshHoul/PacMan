@@ -99,17 +99,19 @@ public class GameBoard : MonoBehaviour {
 
         foreach (GameObject o in objects)
         {
-
-
-            if (o.tag == "Pellets" || o.tag == "PelletsInner" || o.tag == "PelletsSpecial")
+            if (!pacManLost)
             {
-                Tile tile = o.GetComponent<Tile>();
-                if (tile != null)
+
+                if (o.tag == "Pellets" || o.tag == "PelletsInner" || o.tag == "PelletsSpecial")
                 {
-                    if (tile.isPellet || tile.isSuperPellet)
+                    Tile tile = o.GetComponent<Tile>();
+                    if (tile != null)
                     {
-                        tile.GetComponent<SpriteRenderer>().enabled = true;
-                        tile.isConsumed = false;
+                        if (tile.isPellet || tile.isSuperPellet)
+                        {
+                            tile.GetComponent<SpriteRenderer>().enabled = true;
+                            tile.isConsumed = false;
+                        }
                     }
                 }
             }

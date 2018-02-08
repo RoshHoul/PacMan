@@ -62,7 +62,6 @@ public class Controller : MonoBehaviour {
     public void Init(float pacmanSpeed, float fightSpeed, float dotSpeed, float frightDur)
     {
         frightDuration = frightDur;
-        Debug.Log("INIT ON PACMAN");
         speed = maxSpeed - pacmanSpeed;
         frightSp = maxSpeed - fightSpeed;
         dotSp = maxSpeed - dotSpeed;

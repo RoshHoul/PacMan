@@ -104,7 +104,6 @@ public class BaseGhost : MonoBehaviour
                             prevNode = currentNode;
                             SetState(GhostState.Chase);
                             inGhostHouse = false;
-                            Debug.Log("My name is: " + transform.name + " and my nextNode is " + nextNode.name);
                             UpdateAnimatorController();
                         }
                     }
@@ -130,7 +129,7 @@ public class BaseGhost : MonoBehaviour
         speed = ghostSpeed;
         frightenedModeDuration = frightDur;
         startBlinkingAt = frightenedModeDuration - 1.5f;
-        currentState = GhostState.Scatter;
+        SetState(GhostState.Scatter);
     }
 
     public GameObject GetPortal(Vector2 pos)
@@ -200,7 +199,6 @@ public class BaseGhost : MonoBehaviour
                     {
                         speed = ghostTunnelSpeed;
                         inTunnel = true;
-                        Debug.Log("tunnel speed" + speed);
                     }
                     else if ((nextPortal == null) && (portal == null) && inTunnel)
                     {
@@ -383,9 +381,7 @@ public class BaseGhost : MonoBehaviour
         {
             if (GetState() == GhostState.Frightened || GetState() == GhostState.Consumed)
             {
-                Debug.Log("SEGA SPECHELI!");
                 pacMan.GetComponent<Controller>().points += 200;
-                //inGhostHouse = true;
 
                 SetState(GhostState.Consumed);
 
@@ -393,7 +389,6 @@ public class BaseGhost : MonoBehaviour
             }
             else
             {
-                Debug.Log("yes no maybe?");
                 GM.pacManLost = true;
                 return;
             }
@@ -405,7 +400,6 @@ public class BaseGhost : MonoBehaviour
     {
         if (GetState() != GhostState.Frightened && GetState() != GhostState.Consumed)
         {
-            Debug.Log(modeChangeIteration);
             if (!inTunnel)
             {
                 DebugingFunc(1);
@@ -473,7 +467,6 @@ public class BaseGhost : MonoBehaviour
             if (frightenedModeTimer >= frightenedModeDuration)
             {
                 frightenedModeTimer = 0;
-                Debug.Log("PREVSTATE IS: " + prevState);
                 SetState(prevState);
             }
 
@@ -505,7 +498,6 @@ public class BaseGhost : MonoBehaviour
     }
     public void SetToFrightened()
     {
-        Debug.Log("Set to Frightened");
         SetState(GhostState.Frightened);
     }
 
@@ -537,8 +529,6 @@ public class BaseGhost : MonoBehaviour
         }
 
         currentState = newState;
-        Debug.Log("currentState + " + currentState);
-        //UpdateState();
         UpdateAnimatorController();
 
     }

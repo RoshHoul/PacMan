@@ -73,16 +73,6 @@ public class Inky : BaseGhost
             return targTile;
         }
 
-        //if (GetState() == GhostState.Frightened)
-        //{
-        //    targetTile = RandomMovement();
-        //}
-
-        //else if (GetState() == GhostState.Consumed)
-        //{
-        //    targTile = startingNode.transform.position;
-        //}
-
         return targTile;
     }
 
@@ -96,7 +86,6 @@ public class Inky : BaseGhost
             currentNode = startingNode;
             nextNode = CanMove();
             prevNode = startingNode;
-            Debug.Log("SCORE:INKY " + scoreSoFar);
         }
     }
 
