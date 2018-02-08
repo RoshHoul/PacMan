@@ -25,9 +25,9 @@ public class Pinky : BaseGhost {
 
     }
 
-    public override void Init()
+    public override void Init(float speed, float fright, float tunnel, float frightDur)
     {
-        base.Init();
+        base.Init(speed, fright, tunnel, frightDur);
         transform.position = startingNode.transform.position;
         currentNode = startingNode;
 

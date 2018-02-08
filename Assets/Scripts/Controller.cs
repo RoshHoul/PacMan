@@ -11,6 +11,7 @@ public class Controller : MonoBehaviour {
 
     [HideInInspector]
     public int pCollected = 0;
+    public int points = 0;
 
     public enum PacManState
     {
@@ -21,8 +22,10 @@ public class Controller : MonoBehaviour {
     }
 
     public PacManState currentState, prevState;
+    public Node startingNode;
 
-    private int points = 0;
+    public BaseGhost[] ghosts;
+    
     private Animator anim;
     private Sprite currentSprite;
     private Vector2 direction = Vector2.zero;
@@ -38,6 +41,16 @@ public class Controller : MonoBehaviour {
         anim = GetComponent<Animator>();
         currentSprite = GetComponent<SpriteRenderer>().sprite;
         GM = GameObject.Find("_GM").GetComponent<GameBoard>();
+        Init();
+
+  
+    }
+
+    public void Init()
+    {
+        Debug.Log("INIT ON PACMAN");
+        transform.localPosition = startingNode.transform.position;
+        pCollected = 0;
         Node node = GetNodeAtPosition(transform.localPosition);
 
         if (node != null)
@@ -248,7 +261,12 @@ public class Controller : MonoBehaviour {
 
     void Energize()
     {
-        
+        GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Ghosts");
+
+        foreach (GameObject g in ghosts)
+        {
+            g.GetComponent<BaseGhost>().SetToFrightened();
+        }
     }
 
     Node CanMove(Vector2 dir)
@@ -323,7 +341,13 @@ public class Controller : MonoBehaviour {
 
     void SetState(PacManState newState)
     {
+        
         prevState = currentState;
         currentState = newState;
+    }
+
+    public PacManState GetState()
+    {
+        return currentState;
     }
 }

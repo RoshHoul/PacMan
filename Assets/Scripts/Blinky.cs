@@ -6,10 +6,13 @@ public class Blinky : BaseGhost {
 
     public Node startingNode;
     public Node myCornerNode;
-    public bool inStartingPosition;
+    public bool cruiseLeroy = false;
+    public int cruiseLeroyCount;
+
 
 	// Use this for initialization
 	protected override void Start () {
+        base.Start();
     }
 	
 	// Update is called once per frame
@@ -18,9 +21,10 @@ public class Blinky : BaseGhost {
         base.Update();
 	}
 
-    public override void Init()
+    public override void Init(float speed, float fright, float tunnel, float frightDur)
     {
-        base.Init();
+        base.Init(speed, fright, tunnel, frightDur);
+        
         transform.position = startingNode.transform.position;
         currentNode = startingNode;
 
