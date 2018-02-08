@@ -12,6 +12,8 @@ public class GameBoard : MonoBehaviour {
     public Text levelUI;
     public Text points;
 
+    public bool pacManLost = false;
+
     //Level variables
     private float ghostSpeed;
     private float ghostTunnelSpeed;
@@ -20,6 +22,8 @@ public class GameBoard : MonoBehaviour {
     private int ElroyDotCount1;
     private int ElroyDotCount2;
 
+    private int releaseCounter = 0;
+    private int inkyReleaseCounter, clydeReleaseCounter;
 
     private float pacManSpeed;
     private float frightPacManSpeed;
@@ -38,7 +42,7 @@ public class GameBoard : MonoBehaviour {
     void Start () {
 
         ghosts = GameObject.FindGameObjectsWithTag("Ghosts");
-        IncreaseLevel();
+        GetLevelStats();
 
         pacMan = GameObject.Find("Pac Man").GetComponent<Controller>();
         objects = GameObject.FindObjectsOfType(typeof(GameObject));
@@ -48,7 +52,7 @@ public class GameBoard : MonoBehaviour {
             Vector2 pos = o.transform.position;
             Tile tile = o.GetComponent<Tile>();
 
-            if (o.tag == "Pellets" || o.tag == "PelletsInner")
+            if (o.tag == "Pellets" || o.tag == "PelletsInner" || o.tag == "PelletsSpecial")
             {
                 if (tile != null)
                 {
@@ -69,25 +73,24 @@ public class GameBoard : MonoBehaviour {
 
     void Init()
     {
-      //  IncreaseLevel();
         
         for (int i = 0; i < ghosts.Length; i++)
         {
             if (ghosts[i].GetComponent<Pinky>() != null)
             {
-                ghosts[i].GetComponent<Pinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                ghosts[i].GetComponent<Pinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, 0);
             }
             else if (ghosts[i].GetComponent<Blinky>() != null)
             {
-                ghosts[i].GetComponent<Blinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                ghosts[i].GetComponent<Blinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, 0);
             }
             else if (ghosts[i].GetComponent<Inky>() != null)
             {
-                ghosts[i].GetComponent<Inky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                ghosts[i].GetComponent<Inky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, inkyReleaseCounter);
             }
             else if (ghosts[i].GetComponent<Clyde>() != null)
             {
-                ghosts[i].GetComponent<Clyde>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                ghosts[i].GetComponent<Clyde>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, clydeReleaseCounter);
             }
         }
 
@@ -95,7 +98,7 @@ public class GameBoard : MonoBehaviour {
         {
 
 
-            if (o.tag == "Pellets" || o.tag == "PelletsInner")
+            if (o.tag == "Pellets" || o.tag == "PelletsInner" || o.tag == "PelletsSpecial")
             {
                 Tile tile = o.GetComponent<Tile>();
                 if (tile != null)
@@ -109,10 +112,10 @@ public class GameBoard : MonoBehaviour {
             }
         }
 
-        pacMan.Init();
+        pacMan.Init(pacManSpeed, frightPacManSpeed, pacManDotsSpeed, frightDuration);
     }
 	
-    void IncreaseLevel()
+    void GetLevelStats()
     {
         if (level == 1)
         {
@@ -124,10 +127,12 @@ public class GameBoard : MonoBehaviour {
             Debug.Log("ghost values " + ghostSpeed + " " + ghostTunnelSpeed + " " + ghostFrightSpeed);
             ElroyDotCount1 = 20;
             ElroyDotCount2 = 10;
-            pacManSpeed = (20 / 100) * pacManGeneralSpeed;
-            frightPacManSpeed = (10 / 100) * pacManGeneralSpeed;
-            pacManDotsSpeed = (25 / 100) * pacManGeneralSpeed;
-            frightDuration = 6;
+            pacManSpeed = (20  * pacManGeneralSpeed) / 100;
+            frightPacManSpeed = (10 * pacManGeneralSpeed) / 100;
+            pacManDotsSpeed = (25 * pacManGeneralSpeed) / 100;
+            frightDuration = 7;
+            inkyReleaseCounter = 30;
+            clydeReleaseCounter = 50;
 
         }
     }
@@ -141,9 +146,20 @@ public class GameBoard : MonoBehaviour {
 	void Update () {
 
         UpdateUI();
-		if (IsGameOver())
+		if (IsNewLevel())
         {
+            level++;
+            GetLevelStats();
             Init();
+        }
+
+        if (pacManLost)
+        {
+            GetLevelStats();
+            inkyReleaseCounter = 0;
+            clydeReleaseCounter = 1;
+            Init();
+            pacManLost = false;
         }
 
 	}
@@ -154,7 +170,12 @@ public class GameBoard : MonoBehaviour {
         points.text = pacMan.points.ToString();
     }
 
-    bool IsGameOver()
+    void ResetLife()
+    {
+        Debug.Log("DEAAAD");
+    }
+
+    bool IsNewLevel()
     {
         return pelletsCount <= pacMan.pCollected;
     }

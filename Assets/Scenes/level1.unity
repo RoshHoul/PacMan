@@ -179,95 +179,6 @@ Transform:
   m_Father: {fileID: 2033587861}
   m_RootOrder: 233
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1138087
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1138090}
-  - component: {fileID: 1138089}
-  - component: {fileID: 1138088}
-  m_Layer: 0
-  m_Name: spriteSheetAll_12
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1138088
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1138087}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c18e4384195ba6e4b9d5a476243e375c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &1138089
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1138087}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300024, guid: 72cfbd4cd463ed040a4a2fc442495d1f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!4 &1138090
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1138087}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.887245, y: 8.347151, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1757152 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
@@ -298,6 +209,8 @@ MonoBehaviour:
   isPellet: 0
   isSuperPellet: 1
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &8074337 stripped
 GameObject:
@@ -341,6 +254,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &8913429 stripped
 GameObject:
@@ -362,6 +277,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &9514315
 GameObject:
@@ -454,6 +371,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &13913010
 GameObject:
@@ -667,6 +586,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &21112435
 GameObject:
@@ -1027,6 +948,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &27204540 stripped
 Transform:
@@ -1367,6 +1290,35 @@ Prefab:
       propertyPath: ghostBlue
       value: 
       objectReference: {fileID: 9100000, guid: c18e4384195ba6e4b9d5a476243e375c, type: 2}
+    - target: {fileID: 114393749030665792, guid: c492c59e627adb64a8811a59c127709f,
+        type: 2}
+      propertyPath: ghostHouse
+      value: 
+      objectReference: {fileID: 950272732}
+    - target: {fileID: 114393749030665792, guid: c492c59e627adb64a8811a59c127709f,
+        type: 2}
+      propertyPath: eyesUp
+      value: 
+      objectReference: {fileID: 21300120, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114393749030665792, guid: c492c59e627adb64a8811a59c127709f,
+        type: 2}
+      propertyPath: eyesDown
+      value: 
+      objectReference: {fileID: 21300122, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114393749030665792, guid: c492c59e627adb64a8811a59c127709f,
+        type: 2}
+      propertyPath: eyesLeft
+      value: 
+      objectReference: {fileID: 21300124, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114393749030665792, guid: c492c59e627adb64a8811a59c127709f,
+        type: 2}
+      propertyPath: eyesRight
+      value: 
+      objectReference: {fileID: 21300126, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c492c59e627adb64a8811a59c127709f, type: 2}
   m_IsPrefabParent: 0
@@ -1624,6 +1576,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &48392724
 GameObject:
@@ -2078,6 +2032,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &58308452 stripped
 GameObject:
@@ -2099,6 +2055,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &59328312 stripped
 Transform:
@@ -2145,6 +2103,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &62242362
 GameObject:
@@ -2500,6 +2460,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &76204074 stripped
 GameObject:
@@ -2521,6 +2483,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &76427858
 GameObject:
@@ -2618,6 +2582,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &83356417
 Prefab:
@@ -2956,6 +2922,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &93241981
 Prefab:
@@ -3941,6 +3909,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &111385115 stripped
 GameObject:
@@ -3962,6 +3932,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &113490485
 Prefab:
@@ -4189,7 +4161,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsSpecial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -4716,6 +4688,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &138847684
 GameObject:
@@ -4885,6 +4859,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
     type: 2}
   m_PrefabInternal: {fileID: 261595500}
+--- !u!114 &139642275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 139642271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1 &139766632
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,6 +5186,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &149452920
 Prefab:
@@ -5436,6 +5430,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &164257664 stripped
 Transform:
@@ -5821,6 +5817,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &178250318 stripped
 Transform:
@@ -5869,6 +5867,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &187277265 stripped
 GameObject:
@@ -5890,6 +5890,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &188333083
 GameObject:
@@ -5982,6 +5984,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &191194589 stripped
 Transform:
@@ -6775,6 +6779,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &216421669
 GameObject:
@@ -7043,6 +7049,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &225257090
 GameObject:
@@ -7135,6 +7143,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &225876484
 Prefab:
@@ -7513,6 +7523,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &241809779 stripped
 GameObject:
@@ -7534,6 +7546,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &245788011
 GameObject:
@@ -7778,6 +7792,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &256206124
 GameObject:
@@ -7941,6 +7957,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &258921453
 Prefab:
@@ -8143,6 +8161,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &272370023 stripped
 Transform:
@@ -8361,6 +8381,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &281414362
 Prefab:
@@ -8629,6 +8651,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &290284984 stripped
 GameObject:
@@ -8650,6 +8674,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &291361492
 GameObject:
@@ -8742,6 +8768,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &294135206 stripped
 GameObject:
@@ -8763,6 +8791,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &296114371
 GameObject:
@@ -8855,6 +8885,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &304966498
 GameObject:
@@ -9160,6 +9192,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &315667453
 GameObject:
@@ -9328,6 +9362,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &329882030 stripped
 GameObject:
@@ -9349,6 +9385,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &329916237
 GameObject:
@@ -9814,6 +9852,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &359279071 stripped
 GameObject:
@@ -9835,6 +9875,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &360646705
 Prefab:
@@ -9977,6 +10019,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &363164413 stripped
 GameObject:
@@ -10019,6 +10063,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &365675920
 GameObject:
@@ -10122,6 +10168,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
     type: 2}
   m_PrefabInternal: {fileID: 1191032689}
+--- !u!114 &369965310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369965306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1 &372469725 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
@@ -10147,6 +10211,24 @@ MonoBehaviour:
   - {fileID: 950272732}
   - {fileID: 799320465}
   possiblePaths: []
+--- !u!114 &372469729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372469725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1 &373361103
 GameObject:
   m_ObjectHideFlags: 0
@@ -10274,6 +10356,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &377653351 stripped
 GameObject:
@@ -10315,6 +10399,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &378324970
 GameObject:
@@ -10767,6 +10853,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &384205584
 GameObject:
@@ -11127,6 +11215,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &389197297 stripped
 GameObject:
@@ -11148,6 +11238,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &389370790 stripped
 GameObject:
@@ -11169,6 +11261,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &390013401 stripped
 Transform:
@@ -11362,6 +11456,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &404224862 stripped
 GameObject:
@@ -11404,6 +11500,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &404304512 stripped
 Transform:
@@ -11572,6 +11670,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &407579182 stripped
 Transform:
@@ -11916,6 +12016,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &420207795
 GameObject:
@@ -12029,6 +12131,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &422572919
 GameObject:
@@ -12333,6 +12437,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &428107824
 GameObject:
@@ -12688,6 +12794,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &436651349 stripped
 Transform:
@@ -13251,6 +13359,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &448755294
 GameObject:
@@ -13590,6 +13700,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &460116240
 Prefab:
@@ -13924,6 +14036,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &471337408
 GameObject:
@@ -14016,6 +14130,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &473846589
 GameObject:
@@ -14396,6 +14512,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &479666668 stripped
 GameObject:
@@ -14417,6 +14535,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &482698274
 GameObject:
@@ -14989,6 +15109,7 @@ RectTransform:
   m_Children:
   - {fileID: 1131053619}
   - {fileID: 1618299850}
+  - {fileID: 1234528314}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15532,6 +15653,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &516105341
 GameObject:
@@ -15942,6 +16065,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &535407218
 Prefab:
@@ -16093,7 +16218,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: PelletsInner
+      value: PelletsSpecial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -16199,6 +16324,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &544602228
 GameObject:
@@ -16443,6 +16570,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &566392455
 GameObject:
@@ -16611,6 +16740,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &568755046 stripped
 GameObject:
@@ -16654,6 +16785,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &569225825
 GameObject:
@@ -16817,6 +16950,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &577096567 stripped
 Transform:
@@ -16848,6 +16983,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &579322730
 GameObject:
@@ -17107,6 +17244,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &592122208
 GameObject:
@@ -17340,6 +17479,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &596718913
 Prefab:
@@ -17776,6 +17917,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &612643069
 Prefab:
@@ -17923,6 +18066,24 @@ MonoBehaviour:
   - {fileID: 1661427592}
   - {fileID: 1529685406}
   possiblePaths: []
+--- !u!114 &613944559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613944555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1 &616183079
 GameObject:
   m_ObjectHideFlags: 0
@@ -18014,6 +18175,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &620714007
 GameObject:
@@ -18116,6 +18279,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &625145547 stripped
 GameObject:
@@ -18137,6 +18302,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &628883082
 GameObject:
@@ -18496,6 +18663,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &641044756 stripped
 Transform:
@@ -19366,6 +19535,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &676230346 stripped
 GameObject:
@@ -19387,6 +19558,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &676758433
 GameObject:
@@ -19479,6 +19652,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &678721554 stripped
 GameObject:
@@ -19500,6 +19675,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &679073491 stripped
 GameObject:
@@ -19521,6 +19698,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &684625661 stripped
 Transform:
@@ -19668,6 +19847,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &690629965 stripped
 Transform:
@@ -19965,6 +20146,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &698879568 stripped
 Transform:
@@ -19991,6 +20174,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &703722023
 GameObject:
@@ -20138,6 +20323,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &726370536
 GameObject:
@@ -20377,6 +20564,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &741029685
 GameObject:
@@ -20920,6 +21109,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &760034723
 GameObject:
@@ -21970,6 +22161,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
     type: 2}
   m_PrefabInternal: {fileID: 346607459}
+--- !u!114 &799320468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799320464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!4 &801454406 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
@@ -22016,6 +22225,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &803384219 stripped
 GameObject:
@@ -22037,6 +22248,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &804200862
 Prefab:
@@ -22249,6 +22462,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &807186689 stripped
 Transform:
@@ -22588,6 +22803,8 @@ MonoBehaviour:
   isPellet: 0
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 1486432735}
 --- !u!114 &814886677
 MonoBehaviour:
@@ -22749,6 +22966,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &818740918
 Prefab:
@@ -22820,6 +23039,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &821131736 stripped
 Transform:
@@ -22866,6 +23087,8 @@ MonoBehaviour:
   isPellet: 0
   isSuperPellet: 1
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &826580468
 Prefab:
@@ -22987,6 +23210,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &830831897
 GameObject:
@@ -23079,6 +23304,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &832767927
 Prefab:
@@ -23347,6 +23574,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &848539212
 GameObject:
@@ -23602,6 +23831,35 @@ Prefab:
       propertyPath: ghostWhite
       value: 
       objectReference: {fileID: 9100000, guid: 6437552a9be910f45bccdb450aeedffc, type: 2}
+    - target: {fileID: 114817083268260790, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
+        type: 2}
+      propertyPath: ghostHouse
+      value: 
+      objectReference: {fileID: 950272732}
+    - target: {fileID: 114817083268260790, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
+        type: 2}
+      propertyPath: eyesUp
+      value: 
+      objectReference: {fileID: 21300120, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114817083268260790, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
+        type: 2}
+      propertyPath: eyesDown
+      value: 
+      objectReference: {fileID: 21300122, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114817083268260790, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
+        type: 2}
+      propertyPath: eyesLeft
+      value: 
+      objectReference: {fileID: 21300124, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114817083268260790, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa,
+        type: 2}
+      propertyPath: eyesRight
+      value: 
+      objectReference: {fileID: 21300126, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5df6dbbf3c9efc54690a06c4c98a0ffa, type: 2}
   m_IsPrefabParent: 0
@@ -23943,6 +24201,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &872111611 stripped
 Transform:
@@ -24079,6 +24339,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &879328688
 GameObject:
@@ -24292,6 +24554,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &884505280
 GameObject:
@@ -24636,6 +24900,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &894282096 stripped
 GameObject:
@@ -24657,6 +24923,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &895446002 stripped
 GameObject:
@@ -24678,6 +24946,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &895489727
 Prefab:
@@ -24749,6 +25019,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &897622977
 GameObject:
@@ -24912,6 +25184,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &926103513
 Prefab:
@@ -25054,6 +25328,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &945336122 stripped
 Transform:
@@ -25256,7 +25532,26 @@ MonoBehaviour:
   - {fileID: 177717657}
   - {fileID: 1529685406}
   - {fileID: 372469727}
+  - {fileID: 1687347148}
   possiblePaths: []
+--- !u!114 &950272734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 950272730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 1
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1001 &950995778
 Prefab:
   m_ObjectHideFlags: 0
@@ -25776,6 +26071,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &970154392
 GameObject:
@@ -25991,6 +26288,35 @@ Prefab:
       propertyPath: ghostBlue
       value: 
       objectReference: {fileID: 9100000, guid: c18e4384195ba6e4b9d5a476243e375c, type: 2}
+    - target: {fileID: 114100606997051218, guid: 2c88f4790c589dd4b8aaf7e729dbc473,
+        type: 2}
+      propertyPath: ghostHouse
+      value: 
+      objectReference: {fileID: 1529685406}
+    - target: {fileID: 114100606997051218, guid: 2c88f4790c589dd4b8aaf7e729dbc473,
+        type: 2}
+      propertyPath: eyesUp
+      value: 
+      objectReference: {fileID: 21300120, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114100606997051218, guid: 2c88f4790c589dd4b8aaf7e729dbc473,
+        type: 2}
+      propertyPath: eyesDown
+      value: 
+      objectReference: {fileID: 21300122, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114100606997051218, guid: 2c88f4790c589dd4b8aaf7e729dbc473,
+        type: 2}
+      propertyPath: eyesLeft
+      value: 
+      objectReference: {fileID: 21300124, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114100606997051218, guid: 2c88f4790c589dd4b8aaf7e729dbc473,
+        type: 2}
+      propertyPath: eyesRight
+      value: 
+      objectReference: {fileID: 21300126, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c88f4790c589dd4b8aaf7e729dbc473, type: 2}
   m_IsPrefabParent: 0
@@ -26382,6 +26708,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &998952163
 GameObject:
@@ -26758,6 +27086,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1011065170
 Prefab:
@@ -26910,6 +27240,7 @@ MonoBehaviour:
   ghosts: []
   levelUI: {fileID: 482698276}
   points: {fileID: 694126755}
+  pacManLost: 0
 --- !u!4 &1012395939
 Transform:
   m_ObjectHideFlags: 0
@@ -27185,6 +27516,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1018226485
 Prefab:
@@ -27252,6 +27585,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1019462414
 Prefab:
@@ -27849,6 +28184,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1056419155 stripped
 Transform:
@@ -28114,6 +28451,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1062296222 stripped
 GameObject:
@@ -28135,6 +28474,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1063162641
 GameObject:
@@ -28227,6 +28568,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1071578380 stripped
 GameObject:
@@ -28248,6 +28591,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1077281071
 GameObject:
@@ -28860,6 +29205,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1086132607
 GameObject:
@@ -29099,6 +29446,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1098540330 stripped
 Transform:
@@ -29275,6 +29624,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1110477762
 GameObject:
@@ -29467,6 +29818,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1120719861 stripped
 Transform:
@@ -29946,6 +30299,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1140931559
 GameObject:
@@ -30519,6 +30874,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1151580781
 Prefab:
@@ -30660,6 +31017,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1158517726
 GameObject:
@@ -30833,6 +31192,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1164952461
 GameObject:
@@ -30985,6 +31346,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1169314745
 GameObject:
@@ -31077,6 +31440,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1171095175 stripped
 GameObject:
@@ -31118,6 +31483,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1171892944 stripped
 GameObject:
@@ -31139,6 +31506,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1173010592
 GameObject:
@@ -32297,96 +32666,9 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
---- !u!1 &1206504254
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1206504257}
-  - component: {fileID: 1206504256}
-  - component: {fileID: 1206504255}
-  m_Layer: 0
-  m_Name: spriteSheetAll_14
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1206504255
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1206504254}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6437552a9be910f45bccdb450aeedffc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &1206504256
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1206504254}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300028, guid: 72cfbd4cd463ed040a4a2fc442495d1f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!4 &1206504257
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1206504254}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.670395, y: 4.1190696, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208084718 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
@@ -32407,6 +32689,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1211440337
 Prefab:
@@ -32483,6 +32767,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1214136084
 Prefab:
@@ -32630,6 +32916,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1219187956
 Prefab:
@@ -32848,6 +33136,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1227901130 stripped
 GameObject:
@@ -32961,6 +33251,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1232355046
 Prefab:
@@ -33083,6 +33375,81 @@ Transform:
   m_Father: {fileID: 2033587861}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1234528313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1234528314}
+  - component: {fileID: 1234528316}
+  - component: {fileID: 1234528315}
+  m_Layer: 0
+  m_Name: Level (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1234528314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234528313}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2010388554}
+  m_Father: {fileID: 492832602}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -200, y: -500}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1234528315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234528313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: LIFES
+--- !u!222 &1234528316
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234528313}
 --- !u!1 &1235019242
 GameObject:
   m_ObjectHideFlags: 0
@@ -33199,7 +33566,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: Pellets
+      value: PelletsSpecial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -33224,6 +33591,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1239065086 stripped
 Transform:
@@ -33513,6 +33882,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1252132534
 GameObject:
@@ -33681,6 +34052,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1256811140
 GameObject:
@@ -33894,6 +34267,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1266417477
 GameObject:
@@ -34325,6 +34700,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1285269727
 GameObject:
@@ -34439,6 +34816,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1287656946
 Prefab:
@@ -34490,7 +34869,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1222229408048358, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
       propertyPath: m_TagString
-      value: PelletsInner
+      value: PelletsSpecial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd, type: 2}
@@ -35137,6 +35516,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1314719990
 GameObject:
@@ -35229,6 +35610,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1316236810 stripped
 GameObject:
@@ -35250,6 +35633,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1320201436 stripped
 GameObject:
@@ -35292,6 +35677,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1321968079 stripped
 GameObject:
@@ -35313,6 +35700,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1322466279 stripped
 Transform:
@@ -35339,6 +35728,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1327298881 stripped
 GameObject:
@@ -35360,6 +35751,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1328522971 stripped
 GameObject:
@@ -35401,6 +35794,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1331087094 stripped
 GameObject:
@@ -35422,6 +35817,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1334515455
 GameObject:
@@ -35514,6 +35911,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1336198574
 Prefab:
@@ -35787,6 +36186,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1347642444 stripped
 GameObject:
@@ -35808,6 +36209,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1349116990
 Prefab:
@@ -35972,6 +36375,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1353253302
 Prefab:
@@ -36311,6 +36716,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1364053566
 Prefab:
@@ -36382,6 +36789,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1368219041
 Prefab:
@@ -36458,6 +36867,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1374893297
 GameObject:
@@ -36600,6 +37011,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1378405704 stripped
 GameObject:
@@ -36642,6 +37055,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1378733168
 GameObject:
@@ -36957,6 +37372,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1383498018
 Prefab:
@@ -37078,6 +37495,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1387077624
 Prefab:
@@ -37234,6 +37653,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1398364072
 Prefab:
@@ -37305,6 +37726,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1404673857
 Prefab:
@@ -37397,6 +37820,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1405214486 stripped
 Transform:
@@ -37494,6 +37919,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1412354141
 GameObject:
@@ -37778,6 +38205,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1419945971
 GameObject:
@@ -37896,6 +38325,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1433727031
 GameObject:
@@ -38064,6 +38495,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!114 &1440138990
 MonoBehaviour:
@@ -38671,6 +39104,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1459396736
 GameObject:
@@ -38986,6 +39421,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1473928868
 GameObject:
@@ -39290,6 +39727,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1486432735 stripped
 GameObject:
@@ -39316,6 +39755,8 @@ MonoBehaviour:
   isPellet: 0
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 814886675}
 --- !u!114 &1486432738
 MonoBehaviour:
@@ -39761,6 +40202,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1501669244 stripped
 GameObject:
@@ -39782,6 +40225,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1501872070
 Prefab:
@@ -40533,6 +40978,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1519810648
 GameObject:
@@ -40630,6 +41077,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1529685404 stripped
 GameObject:
@@ -40656,7 +41105,26 @@ MonoBehaviour:
   - {fileID: 613944557}
   - {fileID: 1171095177}
   - {fileID: 950272732}
+  - {fileID: 1585654277}
   possiblePaths: []
+--- !u!114 &1529685408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529685404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 1
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1001 &1529716080
 Prefab:
   m_ObjectHideFlags: 0
@@ -41820,6 +42288,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1580687047
 Prefab:
@@ -41955,6 +42425,24 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1529685406}
   possiblePaths: []
+--- !u!114 &1585654279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585654276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 1
+  portalReciever: {fileID: 0}
 --- !u!1 &1586227786
 GameObject:
   m_ObjectHideFlags: 0
@@ -42167,6 +42655,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1600717888 stripped
 Transform:
@@ -42214,6 +42704,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1604231310
 Prefab:
@@ -42301,6 +42793,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1604697962
 GameObject:
@@ -42585,6 +43079,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1615028689 stripped
 GameObject:
@@ -42627,6 +43123,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1615099139
 Prefab:
@@ -42698,6 +43196,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1617679781
 GameObject:
@@ -42985,6 +43485,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!114 &1632298636
 MonoBehaviour:
@@ -43019,6 +43521,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1635021791 stripped
 Transform:
@@ -43116,6 +43620,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1640188435 stripped
 GameObject:
@@ -43137,6 +43643,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1640759345
 GameObject:
@@ -43651,6 +44159,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1653292495
 Prefab:
@@ -43727,6 +44237,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1658764067
 GameObject:
@@ -43825,6 +44337,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
     type: 2}
   m_PrefabInternal: {fileID: 454481348}
+--- !u!114 &1661427595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1661427591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
+  portalReciever: {fileID: 0}
 --- !u!1001 &1663298427
 Prefab:
   m_ObjectHideFlags: 0
@@ -43986,6 +44516,8 @@ MonoBehaviour:
   isPellet: 0
   isSuperPellet: 1
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1671308944
 Prefab:
@@ -44446,6 +44978,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1683891508
 Prefab:
@@ -44664,6 +45198,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1687347145
 Prefab:
@@ -44744,6 +45280,24 @@ MonoBehaviour:
   neighbours:
   - {fileID: 950272732}
   possiblePaths: []
+--- !u!114 &1687347150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687347147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1f6f478ded9cb4784cd079f475f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPortal: 0
+  isPellet: 0
+  isSuperPellet: 0
+  isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 1
+  portalReciever: {fileID: 0}
 --- !u!4 &1687676785 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4611614037870556, guid: 1e48f069eb701cf45b4f5ce1c6deb2dd,
@@ -45016,6 +45570,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1697118435
 GameObject:
@@ -45618,6 +46174,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1713558206 stripped
 Transform:
@@ -45649,6 +46207,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1720804239
 GameObject:
@@ -45933,6 +46493,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1725715845 stripped
 GameObject:
@@ -45954,6 +46516,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1725793177
 GameObject:
@@ -46117,6 +46681,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1731145170 stripped
 GameObject:
@@ -46158,6 +46724,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1731229457 stripped
 GameObject:
@@ -46184,6 +46752,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1736902360 stripped
 GameObject:
@@ -46205,6 +46775,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1737936185 stripped
 GameObject:
@@ -46246,6 +46818,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1739152450
 GameObject:
@@ -46605,6 +47179,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1758768687
 Prefab:
@@ -47309,6 +47885,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1778537239
 GameObject:
@@ -47421,6 +47999,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1780716526
 GameObject:
@@ -47644,6 +48224,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1791783592
 Prefab:
@@ -47715,6 +48297,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1792918342
 Prefab:
@@ -47967,6 +48551,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1803691948
 Prefab:
@@ -48140,6 +48726,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1811812936
 Prefab:
@@ -48353,6 +48941,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1814800120 stripped
 GameObject:
@@ -48374,6 +48964,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1815732302
 GameObject:
@@ -50165,6 +50757,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1866145151 stripped
 GameObject:
@@ -50186,6 +50780,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1868682090 stripped
 GameObject:
@@ -50207,6 +50803,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1868789133 stripped
 GameObject:
@@ -50228,6 +50826,8 @@ MonoBehaviour:
   isPellet: 0
   isSuperPellet: 1
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1869920948
 GameObject:
@@ -50289,6 +50889,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1873342224
 Prefab:
@@ -50694,6 +51296,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1889250566
 GameObject:
@@ -50806,6 +51410,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1894606917
 GameObject:
@@ -50903,6 +51509,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1903226967
 Prefab:
@@ -51095,6 +51703,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1907831162 stripped
 Transform:
@@ -51389,6 +51999,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &1925932524
 Prefab:
@@ -51531,6 +52143,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1938586308
 GameObject:
@@ -51623,6 +52237,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1939110590 stripped
 GameObject:
@@ -51664,6 +52280,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1941523357 stripped
 Transform:
@@ -52339,6 +52957,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &1962686500 stripped
 Transform:
@@ -52780,6 +53400,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1992908509
 GameObject:
@@ -52977,6 +53599,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &1999995420 stripped
 GameObject:
@@ -53019,6 +53643,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2001129216
 GameObject:
@@ -53187,6 +53813,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2005070082 stripped
 GameObject:
@@ -53208,7 +53836,83 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
+--- !u!1 &2010388553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2010388554}
+  - component: {fileID: 2010388556}
+  - component: {fileID: 2010388555}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2010388554
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010388553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1234528314}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2010388555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010388553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 1
+--- !u!222 &2010388556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010388553}
 --- !u!1001 &2015778421
 Prefab:
   m_ObjectHideFlags: 0
@@ -53773,6 +54477,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!4 &2030535311 stripped
 Transform:
@@ -53799,6 +54505,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2032966512 stripped
 GameObject:
@@ -53820,6 +54528,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2033587860
 GameObject:
@@ -54511,6 +55221,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2040363202 stripped
 GameObject:
@@ -54532,6 +55244,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &2041154018
 Prefab:
@@ -54847,6 +55561,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2053337750
 GameObject:
@@ -55212,6 +55928,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2067067358
 GameObject:
@@ -55698,6 +56416,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2083679209 stripped
 GameObject:
@@ -55719,6 +56439,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2085701353
 GameObject:
@@ -56165,6 +56887,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2100943233 stripped
 GameObject:
@@ -56186,6 +56910,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &2107837327
 Prefab:
@@ -56357,6 +57083,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2112934720
 GameObject:
@@ -56449,6 +57177,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2115869026 stripped
 GameObject:
@@ -56470,6 +57200,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2117659749
 GameObject:
@@ -56733,6 +57465,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2124649223 stripped
 GameObject:
@@ -56754,6 +57488,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2125021389
 GameObject:
@@ -56896,6 +57632,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2129687821
 GameObject:
@@ -56993,6 +57731,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &2135558586
 Prefab:
@@ -57064,6 +57804,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1001 &2137635782
 Prefab:
@@ -57207,6 +57949,35 @@ Prefab:
       propertyPath: ghostBlue
       value: 
       objectReference: {fileID: 9100000, guid: c18e4384195ba6e4b9d5a476243e375c, type: 2}
+    - target: {fileID: 114441137279179772, guid: 7e8605cf201145b4b88380c68d225fde,
+        type: 2}
+      propertyPath: ghostHouse
+      value: 
+      objectReference: {fileID: 1529685406}
+    - target: {fileID: 114441137279179772, guid: 7e8605cf201145b4b88380c68d225fde,
+        type: 2}
+      propertyPath: eyesUp
+      value: 
+      objectReference: {fileID: 21300120, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114441137279179772, guid: 7e8605cf201145b4b88380c68d225fde,
+        type: 2}
+      propertyPath: eyesDown
+      value: 
+      objectReference: {fileID: 21300122, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114441137279179772, guid: 7e8605cf201145b4b88380c68d225fde,
+        type: 2}
+      propertyPath: eyesLeft
+      value: 
+      objectReference: {fileID: 21300124, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
+    - target: {fileID: 114441137279179772, guid: 7e8605cf201145b4b88380c68d225fde,
+        type: 2}
+      propertyPath: eyesRight
+      value: 
+      objectReference: {fileID: 21300126, guid: 72cfbd4cd463ed040a4a2fc442495d1f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8605cf201145b4b88380c68d225fde, type: 2}
   m_IsPrefabParent: 0
@@ -57230,6 +58001,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2141014161
 GameObject:
@@ -57382,6 +58155,8 @@ MonoBehaviour:
   isPellet: 1
   isSuperPellet: 0
   isConsumed: 0
+  isHouseEntry: 0
+  isHouse: 0
   portalReciever: {fileID: 0}
 --- !u!1 &2146649872
 GameObject:

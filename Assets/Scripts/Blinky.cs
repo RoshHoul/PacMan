@@ -8,6 +8,7 @@ public class Blinky : BaseGhost {
     public Node myCornerNode;
     public bool cruiseLeroy = false;
     public int cruiseLeroyCount;
+    
 
 
 	// Use this for initialization
@@ -21,9 +22,9 @@ public class Blinky : BaseGhost {
         base.Update();
 	}
 
-    public override void Init(float speed, float fright, float tunnel, float frightDur)
+    public override void Init(float speed, float fright, float tunnel, float frightDur, int releaseCounter)
     {
-        base.Init(speed, fright, tunnel, frightDur);
+        base.Init(speed, fright, tunnel, frightDur, releaseCounter);
         
         transform.position = startingNode.transform.position;
         currentNode = startingNode;

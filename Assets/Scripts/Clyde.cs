@@ -7,7 +7,7 @@ public class Clyde : BaseGhost
 
     public Node startingNode;
     public Node myCornerNode;
-
+    int release = 0;
 
     // Use this for initialization
     protected override void Start()
@@ -25,12 +25,12 @@ public class Clyde : BaseGhost
 
     }
 
-    public override void Init(float speed, float fright, float tunnel, float frightDur)
+    public override void Init(float speed, float fright, float tunnel, float frightDur, int releaseCounter)
     {
-        base.Init(speed, fright, tunnel, frightDur);
+        base.Init(speed, fright, tunnel, frightDur, releaseCounter);
         transform.position = startingNode.transform.position;
         currentNode = startingNode;
-
+        release = releaseCounter;
         direction = Vector2.left;
         nextNode = CanMove();
 
@@ -74,9 +74,14 @@ public class Clyde : BaseGhost
     {
         int scoreSoFar = pacMan.GetComponent<Controller>().pCollected;
 
-        if (scoreSoFar >= 50)
+        if (scoreSoFar >= release)
         {
             inGhostHouse = false;
+            Node tempNode = GetNodeAtPosition(transform.position);
+            nextNode = CanMove();
+            prevNode = currentNode;
+            Move();
+            Debug.Log("SCORE: " + scoreSoFar);
         }
     }
 

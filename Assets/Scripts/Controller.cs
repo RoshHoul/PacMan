@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour {
 
-    public float speed = 4.0f;
+    public float maxSpeed = 5.1f;
+    public float speed, frightSp, dotSp, pacManSpeed;
 
     public Sprite idleSprite;
     public Vector2 orientation;
@@ -12,6 +13,9 @@ public class Controller : MonoBehaviour {
     [HideInInspector]
     public int pCollected = 0;
     public int points = 0;
+
+    private float frightDuration;
+    private float frightCounter = 0;
 
     public enum PacManState
     {
@@ -41,14 +45,27 @@ public class Controller : MonoBehaviour {
         anim = GetComponent<Animator>();
         currentSprite = GetComponent<SpriteRenderer>().sprite;
         GM = GameObject.Find("_GM").GetComponent<GameBoard>();
-        Init();
 
-  
+        Node node = GetNodeAtPosition(transform.localPosition);
+
+        if (node != null)
+        {
+            currentNode = node;
+        }
+
+        direction = Vector2.left;
+        orientation = Vector2.left;
+        ChangePosition(direction);
     }
 
-    public void Init()
+    public void Init(float pacmanSpeed, float fightSpeed, float dotSpeed, float frightDur)
     {
+        frightDuration = frightDur;
         Debug.Log("INIT ON PACMAN");
+        speed = maxSpeed - pacmanSpeed;
+        frightSp = maxSpeed - fightSpeed;
+        dotSp = maxSpeed - dotSpeed;
+        pacManSpeed = speed;
         transform.localPosition = startingNode.transform.position;
         pCollected = 0;
         Node node = GetNodeAtPosition(transform.localPosition);
@@ -242,19 +259,20 @@ public class Controller : MonoBehaviour {
             {
                 if (!tile.isConsumed && tile.isPellet) 
                 {
+                //    speed = dotSp;
                     obj.GetComponent<SpriteRenderer>().enabled = false;
                     tile.isConsumed = true;
                     pCollected++;
                     points += 10;
-                }
-
-                if (!tile.isConsumed && tile.isSuperPellet) {
+                } else if (!tile.isConsumed && tile.isSuperPellet) {
+                //    speed = dotSp;
                     obj.GetComponent<SpriteRenderer>().enabled = false;
                     tile.isConsumed = true;
                     pCollected++;
                     points += 50;
                     Energize();
                 }
+
             }
         }
     }
@@ -265,7 +283,16 @@ public class Controller : MonoBehaviour {
 
         foreach (GameObject g in ghosts)
         {
-            g.GetComponent<BaseGhost>().SetToFrightened();
+         //   if (g.GetComponent<BaseGhost>().inGhostHouse == false) 
+                g.GetComponent<BaseGhost>().SetToFrightened();
+        }
+        
+        speed = frightSp;
+        frightCounter += Time.deltaTime;
+        if (frightCounter >= frightDuration)
+        {
+            speed = maxSpeed;
+            frightCounter = 0;
         }
     }
 
@@ -344,6 +371,7 @@ public class Controller : MonoBehaviour {
         
         prevState = currentState;
         currentState = newState;
+
     }
 
     public PacManState GetState()
