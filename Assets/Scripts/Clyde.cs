@@ -7,7 +7,7 @@ public class Clyde : BaseGhost
 
     public Node startingNode;
     public Node myCornerNode;
-    int release = 0;
+    public int release = 0;
 
     // Use this for initialization
     protected override void Start()
@@ -25,12 +25,11 @@ public class Clyde : BaseGhost
 
     }
 
-    public override void Init(float speed, float fright, float tunnel, float frightDur, int releaseCounter)
+    public override void Init(float speed, float fright, float tunnel, float frightDur)
     {
-        base.Init(speed, fright, tunnel, frightDur, releaseCounter);
+        base.Init(speed, fright, tunnel, frightDur);
         transform.position = startingNode.transform.position;
         currentNode = startingNode;
-        release = releaseCounter;
         direction = Vector2.left;
         nextNode = CanMove();
 

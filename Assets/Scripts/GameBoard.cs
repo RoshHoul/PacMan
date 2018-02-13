@@ -68,35 +68,75 @@ public class GameBoard : MonoBehaviour {
             {
             }
         }
-        Init();
+        Init(false);
         Debug.Log("Pellets are " + pelletsCount);
 
 	}
 
-    void Init()
+    void Init(bool reset)
     {
         lives = pacMan.GetComponent<Controller>().life;
-
-        for (int i = 0; i < ghosts.Length; i++)
+        if (reset)
         {
-            if (ghosts[i].GetComponent<Pinky>() != null)
+            for (int i = 0; i < ghosts.Length; i++)
             {
-                ghosts[i].GetComponent<Pinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, 0);
+                if (ghosts[i].GetComponent<Pinky>() != null)
+                {
+                    Pinky pinky = ghosts[i].GetComponent<Pinky>();
+                    pinky.resetLevel = true;
+                    ghosts[i].GetComponent<Pinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
+                else if (ghosts[i].GetComponent<Blinky>() != null)
+                {
+                    Blinky blinky = ghosts[i].GetComponent<Blinky>();
+                    blinky.resetLevel = true;
+                    blinky.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
+                else if (ghosts[i].GetComponent<Inky>() != null)
+                {
+                    Inky inky = ghosts[i].GetComponent<Inky>();
+                    inky.resetLevel = true;
+                    inky.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
+                else if (ghosts[i].GetComponent<Clyde>() != null)
+                {
+                    Clyde clyde = ghosts[i].GetComponent<Clyde>();
+                    clyde.resetLevel = true;
+                    clyde.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
             }
-            else if (ghosts[i].GetComponent<Blinky>() != null)
+        } else
+        {
+            for (int i = 0; i < ghosts.Length; i++)
             {
-                ghosts[i].GetComponent<Blinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, 0);
-            }
-            else if (ghosts[i].GetComponent<Inky>() != null)
-            {
-                ghosts[i].GetComponent<Inky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, inkyReleaseCounter);
-            }
-            else if (ghosts[i].GetComponent<Clyde>() != null)
-            {
-                ghosts[i].GetComponent<Clyde>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration, clydeReleaseCounter);
+                if (ghosts[i].GetComponent<Pinky>() != null)
+                {
+                    Pinky pinky = ghosts[i].GetComponent<Pinky>();
+                    pinky.resetLevel = false;
+                    ghosts[i].GetComponent<Pinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
+                else if (ghosts[i].GetComponent<Blinky>() != null)
+                {
+                    Blinky blinky = ghosts[i].GetComponent<Blinky>();
+                    blinky.resetLevel = false;
+                    blinky.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
+                else if (ghosts[i].GetComponent<Inky>() != null)
+                {
+                    Inky inky = ghosts[i].GetComponent<Inky>();
+                    inky.resetLevel = false;
+                    inky.release = inkyReleaseCounter;
+                    inky.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
+                else if (ghosts[i].GetComponent<Clyde>() != null)
+                {
+                    Clyde clyde = ghosts[i].GetComponent<Clyde>();
+                    clyde.resetLevel = false;
+                    clyde.release = clydeReleaseCounter;
+                    clyde.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
+                }
             }
         }
-
         foreach (GameObject o in objects)
         {
             if (!pacManLost)
@@ -218,7 +258,7 @@ public class GameBoard : MonoBehaviour {
         {
             level++;
             GetLevelStats();
-            Init();
+            Init(false);
         }
 
         if (pacManLost)
@@ -227,10 +267,9 @@ public class GameBoard : MonoBehaviour {
             {
                 pacMan.GetComponent<Controller>().life--;
                 GetLevelStats();
-                inkyReleaseCounter = 0;
-                clydeReleaseCounter = 1;
-                Init();
+                Init(true);
                 pacManLost = false;
+                Debug.Log("Level Reset");
             } else
             {
                 //GameOverScreen

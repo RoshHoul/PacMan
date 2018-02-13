@@ -7,7 +7,7 @@ public class Inky : BaseGhost
 
     public Node startingNode;
     public Node myCornerNode;
-    private int release = 0;
+    public int release = 0;
 
     // Use this for initialization
     protected override void Start()
@@ -25,10 +25,9 @@ public class Inky : BaseGhost
 
     }
 
-    public override void Init(float speed, float fright, float tunnel, float frightDur, int releaseCounter)
+    public override void Init(float speed, float fright, float tunnel, float frightDur)
     {
-        base.Init(speed, fright, tunnel, frightDur, releaseCounter);
-        release = releaseCounter;
+        base.Init(speed, fright, tunnel, frightDur);
         transform.position = startingNode.transform.position;
         currentNode = GetNodeAtPosition(startingNode.transform.position);
 
@@ -79,14 +78,13 @@ public class Inky : BaseGhost
     private void ReleaseGhost()
     {
         int scoreSoFar = pacMan.GetComponent<Controller>().pCollected;
-
-        if (scoreSoFar >= release)
+        if (scoreSoFar >= release || resetLevel == true)
         {
             inGhostHouse = false;
             currentNode = startingNode;
             nextNode = CanMove();
             prevNode = startingNode;
-        }
+        } 
     }
 
 }

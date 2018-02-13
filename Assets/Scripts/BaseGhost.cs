@@ -19,6 +19,8 @@ public class BaseGhost : MonoBehaviour
     public Sprite eyesLeft;
     public Sprite eyesRight;
 
+    public bool resetLevel;
+
     private float ghostSpeed;
     private float ghostTunnelSpeed;
     private float ghostFrightSpeed;
@@ -113,12 +115,13 @@ public class BaseGhost : MonoBehaviour
         }
     }
 
-    public virtual void Init(float defaultSpeed, float defFrightSpeed, float defTunnelSpeed, float frightDur, int releaseCounter)
+    public virtual void Init(float defaultSpeed, float defFrightSpeed, float defTunnelSpeed, float frightDur)
     {
 
         pacMan = GameObject.Find("Pac Man");
         pacManScript = pacMan.GetComponent<Controller>();
         GM = GameObject.Find("_GM").GetComponent<GameBoard>();
+
 
         UpdateAnimatorController();
         modeChangeIteration = 0;
@@ -131,6 +134,7 @@ public class BaseGhost : MonoBehaviour
         frightenedModeDuration = frightDur;
         startBlinkingAt = frightenedModeDuration - 1.5f;
         SetState(GhostState.Scatter);
+        Debug.Log("me:" + transform.name +  " cn " + currentNode + " pn " + prevNode + " nn " + nextNode);
     }
 
     public GameObject GetPortal(Vector2 pos)
@@ -385,7 +389,7 @@ public class BaseGhost : MonoBehaviour
             }
             else
             {
-                GM.pacManLost = true;
+             //   GM.pacManLost = true;
                 return;
             }
         }
@@ -431,20 +435,16 @@ public class BaseGhost : MonoBehaviour
                     modeChangeIteration++;
                     SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
+                    Debug.Log("Tuk 4<");
                 }
             }
             else if (modeChangeIteration >= 4)
             {
+                Debug.Log("tuk");
                 if (GetState() == GhostState.Scatter )
                 {
                     SetState(GhostState.Chase);
 
-                    modeChangeTimer = 0;
-                }
-
-                if (GetState() == GhostState.Chase)
-                {
-                    SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
                 }
 
@@ -487,6 +487,7 @@ public class BaseGhost : MonoBehaviour
             speed = consumedSpeed;
         }
     }
+
     public void SetToFrightened()
     {
         SetState(GhostState.Frightened);
