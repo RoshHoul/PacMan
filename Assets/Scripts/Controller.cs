@@ -133,7 +133,6 @@ public class Controller : MonoBehaviour {
         {
             if (nextDirection == direction * -1)
             {
-             //   Debug.Log("Change Direction");
 
                 direction = direction * (-1);
                 Node temp = targetNode;
@@ -145,7 +144,6 @@ public class Controller : MonoBehaviour {
 
             if (OverShotTarget())
             {
-               // Debug.Log("Overshot" + targetNode.name);
                 currentNode = targetNode;
                 transform.localPosition = currentNode.transform.position;
 
@@ -259,13 +257,11 @@ public class Controller : MonoBehaviour {
             {
                 if (!tile.isConsumed && tile.isPellet) 
                 {
-                //    speed = dotSp;
                     obj.GetComponent<SpriteRenderer>().enabled = false;
                     tile.isConsumed = true;
                     pCollected++;
                     points += 10;
                 } else if (!tile.isConsumed && tile.isSuperPellet) {
-                //    speed = dotSp;
                     obj.GetComponent<SpriteRenderer>().enabled = false;
                     tile.isConsumed = true;
                     pCollected++;
@@ -283,7 +279,6 @@ public class Controller : MonoBehaviour {
 
         foreach (GameObject g in ghosts)
         {
-         //   if (g.GetComponent<BaseGhost>().inGhostHouse == false) 
                 g.GetComponent<BaseGhost>().SetToFrightened();
         }
         
@@ -291,6 +286,7 @@ public class Controller : MonoBehaviour {
         frightCounter += Time.deltaTime;
         if (frightCounter >= frightDuration)
         {
+            Debug.Log("BUG HERE!!!!!");
             speed = maxSpeed;
             frightCounter = 0;
         }

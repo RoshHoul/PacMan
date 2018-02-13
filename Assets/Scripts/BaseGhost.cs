@@ -134,7 +134,6 @@ public class BaseGhost : MonoBehaviour
         frightenedModeDuration = frightDur;
         startBlinkingAt = frightenedModeDuration - 1.5f;
         SetState(GhostState.Scatter);
-        Debug.Log("me:" + transform.name +  " cn " + currentNode + " pn " + prevNode + " nn " + nextNode);
     }
 
     public GameObject GetPortal(Vector2 pos)
@@ -229,15 +228,6 @@ public class BaseGhost : MonoBehaviour
             transform.localPosition += (Vector3)direction * speed * Time.deltaTime;
         }
 
-        //if (GetState() == GhostState.Frightened && !inGhostHouse)
-        //{
-        //    targetTile = RandomMovement();
-        //}
-
-        //if (GetState() == GhostState.Consumed)
-        //{
-        //    targetTile = ghostHouse.transform.position;
-        //}
 
     }
 
@@ -435,12 +425,10 @@ public class BaseGhost : MonoBehaviour
                     modeChangeIteration++;
                     SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
-                    Debug.Log("Tuk 4<");
                 }
             }
             else if (modeChangeIteration >= 4)
             {
-                Debug.Log("tuk");
                 if (GetState() == GhostState.Scatter )
                 {
                     SetState(GhostState.Chase);

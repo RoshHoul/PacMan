@@ -1,0 +1,7 @@
+﻿/*TODO: 
+- Fix pacman speed - issue is deltaTime isnt iterating
+- add blinky leroy mode
+- double check point calculations
+- add stats for all levels
+- add sprites
+*/
