@@ -82,9 +82,9 @@ public class BaseGhost : MonoBehaviour
 
     void CheckIsInGhostHouse()
     {
-            if (GetState() == GhostState.Consumed)
-            {
-                GameObject tile = GetTileAtPos(transform.position);
+        if (GetState() == GhostState.Consumed)
+        {
+            GameObject tile = GetTileAtPos(transform.position);
 
             if (tile != null)
             {
@@ -102,6 +102,7 @@ public class BaseGhost : MonoBehaviour
                             nextNode = currentNode.neighbours[0];
 
                             prevNode = currentNode;
+                            currentNode = null;
                             SetState(GhostState.Chase);
                             inGhostHouse = false;
                             UpdateAnimatorController();
@@ -236,11 +237,6 @@ public class BaseGhost : MonoBehaviour
 
     }
 
-    public void DebugingFunc(int msg)
-    {
-        if (nextNode == null && currentNode == null && prevNode == null)
-            Debug.Log("Kur tate banica " + msg);
-    }
     
     public Vector2 RandomMovement()
     {
@@ -402,24 +398,20 @@ public class BaseGhost : MonoBehaviour
         {
             if (!inTunnel)
             {
-                DebugingFunc(1);
                 speed = ghostSpeed;
             }
             modeChangeTimer += Time.deltaTime;
 
             if (modeChangeIteration < 2)
             {
-                DebugingFunc(2);
                 if (GetState() == GhostState.Scatter && modeChangeTimer > ScatterModeTimer1)
                 {
-                    DebugingFunc(3);
                     SetState(GhostState.Chase);
                     modeChangeTimer = 0;
                 }
 
                 if (GetState() == GhostState.Chase && modeChangeTimer > ChaseModeTimer)
                 {
-                    DebugingFunc(4);
                     modeChangeIteration++;
                     SetState(GhostState.Scatter);
                     modeChangeTimer = 0;
@@ -445,7 +437,6 @@ public class BaseGhost : MonoBehaviour
             {
                 if (GetState() == GhostState.Scatter )
                 {
-                    DebugingFunc(9);
                     SetState(GhostState.Chase);
 
                     modeChangeTimer = 0;
@@ -522,6 +513,7 @@ public class BaseGhost : MonoBehaviour
             prevState = currentState;
         }
 
+        //Change direction conditions
         if (!inGhostHouse || !(prevState == GhostState.Frightened) || !(newState == GhostState.Consumed))
         {
             prevNode = nextNode;
