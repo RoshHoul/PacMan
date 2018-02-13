@@ -73,7 +73,7 @@ public class Clyde : BaseGhost
     {
         int scoreSoFar = pacMan.GetComponent<Controller>().pCollected;
 
-        if (scoreSoFar >= release)
+        if (scoreSoFar >= release || resetLevel == true)
         {
             inGhostHouse = false;
             Node tempNode = GetNodeAtPosition(transform.position);

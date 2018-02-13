@@ -389,7 +389,7 @@ public class BaseGhost : MonoBehaviour
             }
             else
             {
-             //   GM.pacManLost = true;
+                GM.pacManLost = true;
                 return;
             }
         }

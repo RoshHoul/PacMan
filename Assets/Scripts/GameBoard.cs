@@ -84,17 +84,20 @@ public class GameBoard : MonoBehaviour {
                 {
                     Pinky pinky = ghosts[i].GetComponent<Pinky>();
                     pinky.resetLevel = true;
+                    pinky.currentNode = null;
                     ghosts[i].GetComponent<Pinky>().Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
                 }
                 else if (ghosts[i].GetComponent<Blinky>() != null)
                 {
                     Blinky blinky = ghosts[i].GetComponent<Blinky>();
+                    blinky.currentNode = null;
                     blinky.resetLevel = true;
                     blinky.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
                 }
                 else if (ghosts[i].GetComponent<Inky>() != null)
                 {
                     Inky inky = ghosts[i].GetComponent<Inky>();
+                    inky.currentNode = null;
                     inky.resetLevel = true;
                     inky.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
                 }
@@ -102,6 +105,7 @@ public class GameBoard : MonoBehaviour {
                 {
                     Clyde clyde = ghosts[i].GetComponent<Clyde>();
                     clyde.resetLevel = true;
+                    clyde.currentNode = null;
                     clyde.Init(ghostSpeed, ghostFrightSpeed, ghostTunnelSpeed, frightDuration);
                 }
             }
